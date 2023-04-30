@@ -1,0 +1,174 @@
+mixin register()
+  .register
+    .container
+      h1.register__headine Регистрация на&nbsp;VII Международный Невский&nbsp;Форум
+      form.register__form
+        fieldset.register__fieldset
+          legend.register__title Данные для регистрации
+
+          +custom-input({
+            inputLabel: 'Фамилия',
+            inputId: 'lastname',
+            inputName: 'lastname',
+            isRequired: true
+          })(class="register__input register__input--uppercase")
+
+          +custom-input({
+            inputLabel: 'Имя',
+            inputId: 'name',
+            inputName: 'name',
+            isRequired: true
+          })(class="register__input register__input--uppercase")
+
+          +custom-input({
+            inputLabel: 'Отчество',
+            inputId: 'surname',
+            inputName: 'surname',
+            isRequired: true
+          })(class="register__input register__input--uppercase")
+
+
+
+          label Представьтесь
+          select
+            option(value="Представитель РАНХиГС") Представитель РАНХиГС
+            option Представитель другого вуза
+            option Обучающийся
+            option Представитель бизнеса
+            option Госслужащий
+            option Другое (указать)
+          label Поле для ввода своего варианта
+            input(type="text")
+
+          label Место работы/учебы
+          input(type="text")
+
+          label Должность
+          input(type="text")
+
+          label Регион
+            select
+              option Выпадающий список всех субъектов РФ
+
+          label Ваш e-mail
+          input(type="text")
+
+          label Контактный телефон
+          input(type="text")
+
+      fieldset
+        legend Выберите дату участия
+
+        label 21 июня (Международная конференция)
+        input(type="checkbox")
+
+        label 22 июня (Секции факультетов РАНХиГС)
+        input(type="checkbox")
+
+        label 23 июня (Основной день Форума)
+        input(type="checkbox")
+
+      fieldset
+        legend Укажите мероприятия, в которых Вы будете участвовать
+
+        h2 21 июня
+        label Международная конференция, посвященная вопросам интернационализации вузов
+        input(type="checkbox")
+
+        h2 22 июня
+        label Секция 1 - Экономическое сотрудничество и торговая кооперация: проблемы и новые вызовы в условиях глобальной финансовой турбулентности
+        input(type="checkbox")
+
+        label Секция 2 - Стратегическая сессия для филиальной сети РАНХиГС
+        input(type="checkbox")
+
+        label Секция 3 - Стратегические приоритеты обеспечения экономической и национальной безопасности России в современных условиях
+        input(type="checkbox")
+
+        label Секция 4 - Цифровая трансформация в муниципальном управлении
+        input(type="checkbox")
+
+        label Секция 5 - Региональный и международный опыт формирования ЗОЖ в различных группах населения
+        input(type="checkbox")
+
+        label Секция 6 - Государственность в условиях формирования многополярного мира
+        input(type="checkbox")
+
+        label Секция 7 - Новые приоритеты в развитии международных экономических связей России
+        input(type="checkbox")
+
+        label Секция 8 - Роль права в формировании многополярности современного мира
+        input(type="checkbox")
+
+        label Секция 9 - Социальные смыслы и идентичности: ценности современного человека
+        input(type="checkbox")
+
+        label Секция 10 - Конвергенция как тренд в медиа
+        input(type="checkbox")
+
+        label Секция 11 - Интерпретация истории как стратегия управления общественными отношениями
+        input(type="checkbox")
+
+        label Секция 12 - Креативные индустрии как драйвер территориального развития в парадигме неоиндустриального общества
+        input(type="checkbox")
+
+        h2 23 июня
+        h3 Дневная сессия
+        p Можно выбрать только одну из секций
+        label Секция 1 - Цифровизация кадрового обеспечения государственной службы
+        input(type="radio")
+
+        label Секция 2 - Таможня и внешняя торговля: ломаем преграды
+        input(type="radio")
+
+        label Секция 3 - Повестка социального неравенства в современном мире глазами молодых
+        input(type="radio")
+
+        label Секция 4 - Молодая Арктика
+        input(type="radio")
+
+        h3 Вечерняя сессия
+        p Можно выбрать только одну из секций
+
+        label Секция 5 - Развитие социальной сферы, «Главное-человек»
+        input(type="radio")
+
+        label Секция 6 - Бизнес-секция: научные и индустриальные партнеры
+        input(type="radio")
+
+        label Секция 7 - Эффективное управление мегаполисом для снижения негативного воздействия на окружающую среду и здоровье человека
+        input(type="radio")
+
+        label Секция 8 - Университетский менеджмент в России: вызовы и пути решения
+        input(type="radio")
+
+        fieldset
+          legend Паспортные данные
+          h2 Пропускной режим в Президентскую библиотеку требует предъявления оригинала документа, удостоверяющего личность (паспорт гражданина РФ или гражданина иностранного государства). Просим заполнить следующую информацию
+
+          label Серия паспорта
+          input(type="number")
+
+          label Номер  паспорта
+          input(type="number")
+
+          label Дата рождения
+          input(type="text")
+
+          label Место рождения (как указано в паспорте)
+          input(type="text")
+
+          label Страна проживания
+          input(type="text")
+
+          label Адрес регистрации
+          input(type="text")
+
+
+        fieldset
+          legend Согласие на обработку персональных данных
+          label
+          | Я подтверждаю свое согласие на обработку моих указанных в&nbsp;
+          a(href="#") анкете персональных данных&nbsp;
+          | соответствии со ст. 9 Федерального закона «О персональных данных» от 27.07.2006 г. №152-ФЗ
+          input(type="checkbox")

@@ -1,50 +1,151 @@
 <!DOCTYPE html>
+<!--include ./blocks/intro-->
 <html lang="ru">
   <head>
-    <title>ProjectName</title>
+    <title>Форма регистрации на Невский форум</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="ProjectName — описание">
+    <meta name="description" content="Форма регистрации на Невском форуме">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
     <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-close" viewBox="0 0 20 20"><g fill="none"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></g></symbol></svg></div>
     <div class="wrapper">
-      <header class="header">
-        <div class="container"><span class="header__logo">Логотип</span>
-          <nav class="main-nav">
-            <button class="main-nav__toggle btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false">
-              <svg width="20" height="20" aria-hidden="true">
-                <use xlink:href="#icon-burger"></use>
-              </svg>
-            </button>
-            <div class="main-nav__wrapper">
-              <ul class="main-nav__list">
-                <li class="main-nav__item"><span class="main-nav__link is-active">Главная</span>
-                </li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Страница 2</a>
-                </li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Страница 3</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
       <main>
-        <div class="intro">
+        <div class="register">
           <div class="container">
-            <p style="margin-top: 40px;">Текст&nbsp;с&nbsp;мнемониками</p>
-            <p style="margin-top: 40px;">Пример использования +img()</p>
-            <p style="margin-bottom: 40px;"><img src="img/content/placeholder.png" srcset="img/content/placeholder@2x.png 2x" width="120" height="120" alt="Пример">
-            </p>
+            <h1 class="register__headine">Регистрация на&nbsp;VII Международный Невский&nbsp;Форум</h1>
+            <form class="register__form">
+              <fieldset class="register__fieldset">
+                <legend class="register__title">Данные для регистрации</legend>
+                <div class="input register__input register__input--uppercase">
+                  <label><span class="input__label">Фамилия</span>
+                    <input type="text" id="lastname" name="lastname">
+                  </label>
+                </div>
+                <div class="input register__input register__input--uppercase">
+                  <label><span class="input__label">Имя</span>
+                    <input type="text" id="name" name="name">
+                  </label>
+                </div>
+                <div class="input register__input register__input--uppercase">
+                  <label><span class="input__label">Отчество</span>
+                    <input type="text" id="surname" name="surname">
+                  </label>
+                </div>
+                <label>Представьтесь</label>
+                <select>
+                  <option value="Представитель РАНХиГС">Представитель РАНХиГС</option>
+                  <option>Представитель другого вуза</option>
+                  <option>Обучающийся</option>
+                  <option>Представитель бизнеса</option>
+                  <option>Госслужащий</option>
+                  <option>Другое (указать)</option>
+                </select>
+                <label>Поле для ввода своего варианта
+                  <input type="text">
+                </label>
+                <label>Место работы/учебы</label>
+                <input type="text">
+                <label>Должность</label>
+                <input type="text">
+                <label>Регион
+                  <select>
+                    <option>Выпадающий список всех субъектов РФ</option>
+                  </select>
+                </label>
+                <label>Ваш e-mail</label>
+                <input type="text">
+                <label>Контактный телефон</label>
+                <input type="text">
+              </fieldset>
+            </form>
+            <fieldset>
+              <legend>Выберите дату участия</legend>
+              <label>21 июня (Международная конференция)</label>
+              <input type="checkbox">
+              <label>22 июня (Секции факультетов РАНХиГС)</label>
+              <input type="checkbox">
+              <label>23 июня (Основной день Форума)</label>
+              <input type="checkbox">
+            </fieldset>
+            <fieldset>
+              <legend>Укажите мероприятия, в которых Вы будете участвовать</legend>
+              <h2>21 июня</h2>
+              <label>Международная конференция, посвященная вопросам интернационализации вузов</label>
+              <input type="checkbox">
+              <h2>22 июня</h2>
+              <label>Секция 1 - Экономическое сотрудничество и торговая кооперация: проблемы и новые вызовы в условиях глобальной финансовой турбулентности</label>
+              <input type="checkbox">
+              <label>Секция 2 - Стратегическая сессия для филиальной сети РАНХиГС</label>
+              <input type="checkbox">
+              <label>Секция 3 - Стратегические приоритеты обеспечения экономической и национальной безопасности России в современных условиях</label>
+              <input type="checkbox">
+              <label>Секция 4 - Цифровая трансформация в муниципальном управлении</label>
+              <input type="checkbox">
+              <label>Секция 5 - Региональный и международный опыт формирования ЗОЖ в различных группах населения</label>
+              <input type="checkbox">
+              <label>Секция 6 - Государственность в условиях формирования многополярного мира</label>
+              <input type="checkbox">
+              <label>Секция 7 - Новые приоритеты в развитии международных экономических связей России</label>
+              <input type="checkbox">
+              <label>Секция 8 - Роль права в формировании многополярности современного мира</label>
+              <input type="checkbox">
+              <label>Секция 9 - Социальные смыслы и идентичности: ценности современного человека</label>
+              <input type="checkbox">
+              <label>Секция 10 - Конвергенция как тренд в медиа</label>
+              <input type="checkbox">
+              <label>Секция 11 - Интерпретация истории как стратегия управления общественными отношениями</label>
+              <input type="checkbox">
+              <label>Секция 12 - Креативные индустрии как драйвер территориального развития в парадигме неоиндустриального общества</label>
+              <input type="checkbox">
+              <h2>23 июня</h2>
+              <h3>Дневная сессия</h3>
+              <p>Можно выбрать только одну из секций</p>
+              <label>Секция 1 - Цифровизация кадрового обеспечения государственной службы</label>
+              <input type="radio">
+              <label>Секция 2 - Таможня и внешняя торговля: ломаем преграды</label>
+              <input type="radio">
+              <label>Секция 3 - Повестка социального неравенства в современном мире глазами молодых</label>
+              <input type="radio">
+              <label>Секция 4 - Молодая Арктика</label>
+              <input type="radio">
+              <h3>Вечерняя сессия</h3>
+              <p>Можно выбрать только одну из секций</p>
+              <label>Секция 5 - Развитие социальной сферы, «Главное-человек»</label>
+              <input type="radio">
+              <label>Секция 6 - Бизнес-секция: научные и индустриальные партнеры</label>
+              <input type="radio">
+              <label>Секция 7 - Эффективное управление мегаполисом для снижения негативного воздействия на окружающую среду и здоровье человека</label>
+              <input type="radio">
+              <label>Секция 8 - Университетский менеджмент в России: вызовы и пути решения</label>
+              <input type="radio">
+              <fieldset>
+                <legend>Паспортные данные</legend>
+                <h2>Пропускной режим в Президентскую библиотеку требует предъявления оригинала документа, удостоверяющего личность (паспорт гражданина РФ или гражданина иностранного государства). Просим заполнить следующую информацию</h2>
+                <label>Серия паспорта</label>
+                <input type="number">
+                <label>Номер  паспорта</label>
+                <input type="number">
+                <label>Дата рождения</label>
+                <input type="text">
+                <label>Место рождения (как указано в паспорте)</label>
+                <input type="text">
+                <label>Страна проживания</label>
+                <input type="text">
+                <label>Адрес регистрации</label>
+                <input type="text">
+              </fieldset>
+              <fieldset>
+                <legend>Согласие на обработку персональных данных</legend>
+                <label></label>Я подтверждаю свое согласие на обработку моих указанных в&nbsp;<a href="#">анкете персональных данных&nbsp;</a>соответствии со ст. 9 Федерального закона «О персональных данных» от 27.07.2006 г. №152-ФЗ
+                <input type="checkbox">
+              </fieldset>
+            </fieldset>
           </div>
         </div>
       </main>
-      <footer class="footer">
-        <div class="container"></div>
-      </footer>
     </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>

@@ -316,10 +316,24 @@ template {
 
 @font-face {
   font-style: normal;
-  font-weight: 400;
-  font-family: "";
+  font-weight: 300;
+  font-family: "Lato";
   font-display: swap;
-  src: url("../fonts/.woff2") format("woff2");
+  src: url("../../fonts/Lato-Light.woff2") format("woff2"), url("../../fonts/Lato-Light.woff") format("woff"), url("../../fonts/Lato-Light.ttf") format("ttf");
+}
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Lato";
+  font-display: swap;
+  src: url("../../fonts/Lato-Regular.woff2") format("woff2"), url("../../fonts/Lato-Regular.woff") format("woff"), url("../../fonts/Lato-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+  font-family: "Lato";
+  font-display: swap;
+  src: url("../../fonts/Lato-Bold.woff2") format("woff2"), url("../../fonts/Lato-Bold.woff") format("woff"), url("../../fonts/Lato-Bold.ttf") format("ttf");
 }
 *,
 *::before,
@@ -340,8 +354,8 @@ html {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  font-family: "Placeholder", "Arial", sans-serif;
-  color: #000000;
+  font-family: "Lato", "Arial", sans-serif;
+  color: #eeeeee;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -350,7 +364,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #040b3d;
 }
 
 a {
@@ -370,8 +384,8 @@ textarea {
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: inset 0 0 0 1000px #ffffff;
-          box-shadow: inset 0 0 0 1000px #ffffff;
+  -webkit-box-shadow: inset 0 0 0 1000px #eeeeee;
+          box-shadow: inset 0 0 0 1000px #eeeeee;
   -webkit-text-fill-color: #000000;
 }
 
@@ -481,7 +495,7 @@ button,
   /* stylelint-disable */
   font-weight: 400 !important;
   /* stylelint-enable */
-  font-family: "Rouble", "Arial", sans-serif;
+  font-family: "Lato", "Arial", sans-serif;
   /* stylelint-disable */
   text-transform: lowercase !important;
   /* stylelint-enable */
@@ -549,6 +563,42 @@ button,
   .container {
     padding: 0 16px;
   }
+}
+
+.register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+.register__headine {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-size: 52px;
+  line-height: 1.2;
+  text-align: center;
+}
+.register__fieldset {
+  margin-bottom: 35px;
+  padding: 0;
+  border: 0;
+}
+.register__title {
+  margin-bottom: 18px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+.register__input--uppercase input {
+  text-transform: uppercase;
+}
+.register__input:not(:last-of-type) {
+  margin-bottom: 24px;
 }
 
 .header {
@@ -739,34 +789,32 @@ button,
   opacity: 0.8;
 }
 
-.custom-input,
+.input,
 .custom-textarea {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 530px;
   padding: size(14px) 0 28px 0;
 }
 @media screen and (max-width: 767px) {
-  .custom-input,
+  .input,
 .custom-textarea {
     padding: 4px 0 48px 0;
     width: 100%;
   }
 }
-.custom-input label,
+.input label,
 .custom-textarea label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
+  font-size: 18px;
 }
 @media screen and (max-width: 767px) {
-  .custom-input label,
+  .input label,
 .custom-textarea label {
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -777,52 +825,56 @@ button,
             flex-direction: column;
   }
 }
-.custom-input label input,
-.custom-input label textarea,
+.input label span,
+.custom-textarea label span {
+  margin-bottom: 5px;
+}
+.input label input,
+.input label textarea,
 .custom-textarea label input,
 .custom-textarea label textarea {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  max-width: 300px;
   min-height: 48px;
-  margin-left: auto;
   padding: 10px;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: #eee;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
+  background-color: #040b3d;
   outline: none;
   -webkit-transition: border 0.3s ease;
   -o-transition: border 0.3s ease;
   transition: border 0.3s ease;
 }
 @media screen and (max-width: 767px) {
-  .custom-input label input,
-.custom-input label textarea,
+  .input label input,
+.input label textarea,
 .custom-textarea label input,
 .custom-textarea label textarea {
     max-width: unset;
     width: 100%;
   }
 }
-.custom-input label input:hover,
-.custom-input label textarea:hover,
+.input label input:hover,
+.input label textarea:hover,
 .custom-textarea label input:hover,
 .custom-textarea label textarea:hover {
-  border: 2px solid rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
-.custom-input label input:focus,
-.custom-input label textarea:focus,
+.input label input:focus,
+.input label textarea:focus,
 .custom-textarea label input:focus,
 .custom-textarea label textarea:focus {
-  border: 2px solid rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.8);
 }
 @media screen and (max-width: 767px) {
-  .custom-input__label,
+  .input__label,
 .custom-textarea__label {
     margin: 0 0 18px 0;
   }
 }
-.custom-input__error,
+.input__error,
 .custom-textarea__error {
   position: absolute;
   right: 0;
@@ -834,46 +886,46 @@ button,
   transition: opacity 0.3s ease;
 }
 @media screen and (max-width: 767px) {
-  .custom-input__error,
+  .input__error,
 .custom-textarea__error {
     bottom: 20px;
   }
 }
-.custom-input.is-invalid input,
-.custom-input.is-invalid textarea,
+.input.is-invalid input,
+.input.is-invalid textarea,
 .custom-textarea.is-invalid input,
 .custom-textarea.is-invalid textarea {
   border: 2px solid #ff1553;
 }
-.custom-input.is-invalid input:focus, .custom-input.is-invalid input:hover,
-.custom-input.is-invalid textarea:focus,
-.custom-input.is-invalid textarea:hover,
+.input.is-invalid input:focus, .input.is-invalid input:hover,
+.input.is-invalid textarea:focus,
+.input.is-invalid textarea:hover,
 .custom-textarea.is-invalid input:focus,
 .custom-textarea.is-invalid input:hover,
 .custom-textarea.is-invalid textarea:focus,
 .custom-textarea.is-invalid textarea:hover {
   border: 2px solid rgba(255, 21, 83, 0.5);
 }
-.custom-input.is-valid input,
+.input.is-valid input,
 .custom-textarea.is-valid input {
   border: 2px solid #22b259;
 }
-.custom-input.is-valid input:focus, .custom-input.is-valid input:hover,
+.input.is-valid input:focus, .input.is-valid input:hover,
 .custom-textarea.is-valid input:focus,
 .custom-textarea.is-valid input:hover {
   border: 2px solid rgba(34, 178, 89, 0.5);
 }
-.custom-input .input-message,
+.input .input-message,
 .custom-textarea .input-message {
   position: absolute;
   right: 0;
   bottom: -5px;
 }
-.custom-input .input-message.is-invalid,
+.input .input-message.is-invalid,
 .custom-textarea .input-message.is-invalid {
   color: #ff0000;
 }
-.custom-input .input-message.is-valid,
+.input .input-message.is-valid,
 .custom-textarea .input-message.is-valid {
   color: #15ab07;
 }

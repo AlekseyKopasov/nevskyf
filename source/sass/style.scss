@@ -17,14 +17,14 @@
 @import "global/container";
 
 // Blocks
-// ---------------------------------
+@import "blocks/register";
 
 @import "blocks/header";
 @import "blocks/main-nav";
 @import "blocks/footer";
 @import "blocks/modal";
 @import "blocks/btn";
-@import "blocks/custom-input";
+@import "blocks/input";
 @import "blocks/custom-toggle";
 @import "blocks/custom-select";
 @import "blocks/input-upload";

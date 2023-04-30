@@ -1,0 +1,38 @@
+.register {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 0;
+
+  &__headine {
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+    font-size: 52px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  &__fieldset {
+    margin-bottom: 35px;
+    padding: 0;
+    border: 0;
+  }
+
+  &__title {
+    margin-bottom: 18px;
+
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  &__input--uppercase input {
+    text-transform: uppercase;
+  }
+
+  &__input:not(:last-of-type) {
+    margin-bottom: 24px;
+  }
+}
