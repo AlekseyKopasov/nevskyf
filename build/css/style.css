@@ -1048,9 +1048,8 @@ button,
 
 .custom-select {
   position: relative;
-  width: 300px;
-  padding: 14px 0 28px;
-  margin: 0 0 44px 0;
+  padding: 14px 0;
+  font-size: 18px;
   /* &.is-valid {
     .custom-select__button {
       border: 2px solid $color-eucalyptus;
@@ -1069,12 +1068,8 @@ button,
   }
 }
 .custom-select__label {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  display: inline-block;
+  margin-bottom: 5px;
   -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
   -o-transition: transform 0.3s ease, opacity 0.3s ease;
@@ -1133,8 +1128,9 @@ button,
   width: 100%;
   height: 48px;
   padding: 5px 10px;
-  background-color: rgba(255, 255, 255, 0);
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  color: #eeeeee;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   outline: none;
   cursor: pointer;
@@ -1143,10 +1139,10 @@ button,
   transition: border 0.3s ease;
 }
 .custom-select__button:hover {
-  border: 2px solid rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 .custom-select__button:focus {
-  border: 2px solid rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.8);
 }
 .custom-select__button:disabled {
   pointer-events: none;
@@ -1157,13 +1153,13 @@ button,
   bottom: 10px;
   z-index: 1;
   width: 100%;
-  max-height: 100px;
+  max-height: 240px;
   margin: 0;
   padding: 0;
   overflow-y: auto;
   list-style: none;
-  background-color: #ffffff;
-  border: 2px solid #000000;
+  background-color: #040b3d;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   -webkit-transform: translateY(100%);
       -ms-transform: translateY(100%);
           transform: translateY(100%);
@@ -1174,7 +1170,7 @@ button,
   transition: visibility 0.3s ease, opacity 0.3s ease;
 }
 .custom-select__item {
-  padding: 5px;
+  padding: 12px;
   outline: none;
   cursor: pointer;
   -webkit-transition: background-color 0.3s ease;
@@ -1182,23 +1178,23 @@ button,
   transition: background-color 0.3s ease;
 }
 .custom-select__item[aria-selected=true] {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 @media (hover: hover) {
   .custom-select__item[aria-selected=true]:hover:not(.focus-visible) {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
   }
 }
 .custom-select__item[aria-selected=true].focus-visible:focus {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 @media (hover: hover) {
   .custom-select__item:hover:not(.focus-visible) {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
   }
 }
 .custom-select__item.focus-visible:focus {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 .custom-select__error {
   position: absolute;
@@ -1235,7 +1231,7 @@ button,
   width: 20px;
   height: 10px;
   margin-left: auto;
-  background-color: #000000;
+  background-color: #ffffff;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   -o-transition: transform 0.3s ease;
@@ -1266,14 +1262,8 @@ button,
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.custom-select.is-open .custom-select__label {
-  opacity: 0;
-}
 .custom-select.not-empty .custom-select__text {
   opacity: 1;
-}
-.custom-select.not-empty .custom-select__label {
-  opacity: 0;
 }
 .custom-select.not-empty .custom-select__placeholder {
   opacity: 0;

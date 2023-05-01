@@ -1,9 +1,9 @@
 .custom-select {
   position: relative;
 
-  width: 300px;
-  padding: 14px 0 28px;
-  margin: 0 0 44px 0;
+  padding: 14px 0;
+
+  font-size: 18px;
 
   @media screen and (max-width: 767px) {
     padding: 4px 0 14px;
@@ -11,11 +11,8 @@
   }
 
   &__label {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-
-    transform: translateY(-50%);
+    display: inline-block;
+    margin-bottom: 5px;
 
     transition: transform 0.3s ease, opacity  0.3s ease;
 
@@ -66,8 +63,9 @@
     height: 48px;
     padding: 5px 10px;
 
-    background-color: rgba(255, 255, 255, 0);
-    border: 2px solid rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    color: $color-whisper;
+    border: 2px solid rgba(#ffffff, 0.2);
     border-radius: 5px;
     outline: none;
     cursor: pointer;
@@ -75,11 +73,11 @@
     transition: border 0.3s ease;
 
     &:hover {
-      border: 2px solid rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(#ffffff, 0.5);
     }
 
     &:focus {
-      border: 2px solid rgba(0, 0, 0, 0.8);
+      border: 2px solid rgba(#ffffff, 0.8);
     }
 
     &:disabled {
@@ -94,15 +92,15 @@
     z-index: 1;
 
     width: 100%;
-    max-height: 100px;
+    max-height: 240px;
     margin: 0;
     padding: 0;
     overflow-y: auto;
 
     list-style: none;
 
-    background-color: #ffffff;
-    border: 2px solid #000000;
+    background-color: $color-midnight-express;
+    border: 2px solid rgba(#ffffff, 0.2);
     transform: translateY(100%);
     visibility: hidden;
     opacity: 0;
@@ -111,7 +109,7 @@
   }
 
   &__item {
-    padding: 5px;
+    padding: 12px;
 
     outline: none;
     cursor: pointer;
@@ -119,27 +117,27 @@
     transition: background-color 0.3s ease;
 
     &[aria-selected="true"] {
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: rgba($color-default-white, 0.2);
 
       @media (hover: hover) {
         &:hover:not(.focus-visible) {
-          background-color: rgba(0, 0, 0, 0.2);
+          background-color: rgba($color-default-white, 0.2);
         }
       }
 
       &.focus-visible:focus {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba($color-default-white, 0.2);
       }
     }
 
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba($color-default-white, 0.4);
       }
     }
 
     &.focus-visible:focus {
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba($color-default-white, 0.4);
     }
   }
 
@@ -181,7 +179,7 @@
     height: 10px;
     margin-left: auto;
 
-    background-color: #000000;
+    background-color: $color-default-white;
 
     transition: transform 0.3s ease;
 
@@ -213,19 +211,11 @@
     .custom-select__icon {
       transform: rotate(180deg);
     }
-
-    .custom-select__label {
-      opacity: 0;
-    }
   }
 
   &.not-empty {
     .custom-select__text {
       opacity: 1;
-    }
-
-    .custom-select__label {
-      opacity: 0;
     }
 
     .custom-select__placeholder {

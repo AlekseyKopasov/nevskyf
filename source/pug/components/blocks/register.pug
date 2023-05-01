@@ -1,4 +1,44 @@
 mixin register()
+  -
+    const representativeList = [
+      {
+        text: 'Представитель РАНХиГС',
+        value: 'ranepaUniversity',
+        ariaSelected: true,
+        isActive: true
+      },
+      {
+        text: 'Представитель другого вуза',
+        value: 'anotherUniversity',
+        ariaSelected: false,
+        isActive: false
+      },
+      {
+        text: 'Обучающийся',
+        value: 'student',
+        ariaSelected: false,
+        isActive: false
+      },
+      {
+        text: 'Представитель бизнеса',
+        value: 'businessman',
+        ariaSelected: false,
+        isActive: false
+      },
+      {
+        text: 'Госслужащий',
+        value: 'civilServant',
+        ariaSelected: false,
+        isActive: false
+      },
+      {
+        text: 'Другое (указать)',
+        value: 'other',
+        ariaSelected: false,
+        isActive: false
+      }
+    ]
+
   .register
     .container
       h1.register__headine Регистрация на&nbsp;VII Международный Невский&nbsp;Форум
@@ -27,34 +67,50 @@ mixin register()
             isRequired: true
           })(class="register__input register__input--uppercase")
 
+          +custom-select({
+            label: 'Представьтесь',
+            optionsList: representativeList
+          })(class="custom-select" data-select='')
 
+          +custom-input({
+            inputId: 'yourOwnVersion',
+            inputName: 'yourOwnVersion',
+            inputPlaceholder: 'Представьтесь',
+            isRequired: true
+          })(class="register__input")
 
-          label Представьтесь
-          select
-            option(value="Представитель РАНХиГС") Представитель РАНХиГС
-            option Представитель другого вуза
-            option Обучающийся
-            option Представитель бизнеса
-            option Госслужащий
-            option Другое (указать)
-          label Поле для ввода своего варианта
-            input(type="text")
+          +custom-input({
+            inputLabel: 'Место работы/учебы',
+            inputId: 'workplace',
+            inputName: 'workplace',
+            isRequired: true
+          })(class="register__input")
 
-          label Место работы/учебы
-          input(type="text")
+          +custom-input({
+            inputLabel: 'Должность',
+            inputId: 'jobTitle',
+            inputName: 'jobTitle',
+            isRequired: true
+          })(class="register__input")
 
-          label Должность
-          input(type="text")
+          +custom-select({
+            label: 'Регион',
+            optionsList: '../../json/region.pug'
+          })(class="custom-select" data-select='')
 
-          label Регион
-            select
-              option Выпадающий список всех субъектов РФ
+          +custom-input({
+            inputLabel: 'Ваш e-mail',
+            inputId: 'email',
+            inputName: 'email',
+            isRequired: true
+          })(class="register__input")
 
-          label Ваш e-mail
-          input(type="text")
-
-          label Контактный телефон
-          input(type="text")
+          +custom-input({
+            inputLabel: 'Контактный телефон',
+            inputId: 'phone',
+            inputName: 'phone',
+            isRequired: true
+          })(class="register__input")
 
       fieldset
         legend Выберите дату участия

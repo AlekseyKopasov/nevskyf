@@ -34,31 +34,68 @@
                     <input type="text" id="surname" name="surname">
                   </label>
                 </div>
-                <label>Представьтесь</label>
-                <select>
-                  <option value="Представитель РАНХиГС">Представитель РАНХиГС</option>
-                  <option>Представитель другого вуза</option>
-                  <option>Обучающийся</option>
-                  <option>Представитель бизнеса</option>
-                  <option>Госслужащий</option>
-                  <option>Другое (указать)</option>
-                </select>
-                <label>Поле для ввода своего варианта
-                  <input type="text">
-                </label>
-                <label>Место работы/учебы</label>
-                <input type="text">
-                <label>Должность</label>
-                <input type="text">
-                <label>Регион
-                  <select>
-                    <option>Выпадающий список всех субъектов РФ</option>
-                  </select>
-                </label>
-                <label>Ваш e-mail</label>
-                <input type="text">
-                <label>Контактный телефон</label>
-                <input type="text">
+                <div class="custom-select" data-select=""><span class="custom-select__label">Представьтесь</span>
+                  <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                  <ul class="custom-select__list" role="listbox">
+                    <li class="custom-select__item" tabindex="0" data-select-value="ranepaUniversity" aria-selected="true" role="option">Представитель РАНХиГС</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="anotherUniversity" aria-selected="false" role="option">Представитель другого вуза</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="student" aria-selected="false" role="option">Обучающийся</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="businessman" aria-selected="false" role="option">Представитель бизнеса</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="civilServant" aria-selected="false" role="option">Госслужащий</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="other" aria-selected="false" role="option">Другое (указать)</li>
+                  </ul>
+                </div>
+                <div class="input register__input">
+                  <label>
+                    <input type="text" id="yourOwnVersion" name="yourOwnVersion" placeholder="Представьтесь">
+                  </label>
+                </div>
+                <div class="input register__input">
+                  <label><span class="input__label">Место работы/учебы</span>
+                    <input type="text" id="workplace" name="workplace">
+                  </label>
+                </div>
+                <div class="input register__input">
+                  <label><span class="input__label">Должность</span>
+                    <input type="text" id="jobTitle" name="jobTitle">
+                  </label>
+                </div>
+                <div class="custom-select" data-select=""><span class="custom-select__label">Регион</span>
+                  <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                  <ul class="custom-select__list" role="listbox">
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                  </ul>
+                </div>
+                <div class="input register__input">
+                  <label><span class="input__label">Ваш e-mail</span>
+                    <input type="text" id="email" name="email">
+                  </label>
+                </div>
+                <div class="input register__input">
+                  <label><span class="input__label">Контактный телефон</span>
+                    <input type="text" id="phone" name="phone">
+                  </label>
+                </div>
               </fieldset>
             </form>
             <fieldset>
