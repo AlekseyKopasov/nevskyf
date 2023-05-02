@@ -20,28 +20,29 @@
     <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-close" viewBox="0 0 20 20"><g fill="none"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></g></symbol></svg></div>
     <div class="wrapper">
       <main>
-        <div class="register">
+        <div class="register" data-form-validate phoneLength>
           <div class="container">
             <h1 class="register__headine">Регистрация на&nbsp;VII Международный Невский&nbsp;Форум</h1>
             <form class="register__form">
+              <button class="btn" type="submit">Зарегистрироваться</button>
               <fieldset class="register__fieldset">
                 <legend class="register__title register__title--hidden">Данные для регистрации</legend>
-                <div class="input register__input">
+                <div class="input register__input register__input--uppercase" data-validate-type="text" data-required>
                   <label><span class="input__label">Фамилия</span>
-                    <input type="text" id="lastname" name="lastname">
+                    <input type="text" id="lastname" name="lastname" required>
                   </label>
                 </div>
-                <div class="input register__input">
+                <div class="input register__input register__input--uppercase" data-validate-type="text" data-required>
                   <label><span class="input__label">Имя</span>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" required>
                   </label>
                 </div>
-                <div class="input register__input">
+                <div class="input register__input register__input--uppercase" data-validate-type="text" data-required>
                   <label><span class="input__label">Отчество</span>
-                    <input type="text" id="surname" name="surname">
+                    <input type="text" id="surname" name="surname" required>
                   </label>
                 </div>
-                <div class="custom-select" data-select=""><span class="custom-select__label">Представьтесь</span><span class="custom-select__placeholder">Представьтесь</span>
+                <div class="custom-select" data-validate-type="select" data-required data-select=""><span class="custom-select__label">Представьтесь</span>
                   <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
                   <ul class="custom-select__list" role="listbox">
                     <li class="custom-select__item" tabindex="0" data-select-value="ranepaUniversity" aria-selected="false" role="option">Представитель РАНХиГС</li>
@@ -52,22 +53,22 @@
                     <li class="custom-select__item" tabindex="0" data-select-value="other" aria-selected="false" role="option">Другое (указать)</li>
                   </ul>
                 </div>
-                <div class="input register__input">
+                <div class="input register__input" data-validate-type="text" data-required>
                   <label>
-                    <input type="text" id="yourOwnVersion" name="yourOwnVersion" placeholder="Представьтесь">
+                    <input type="text" id="yourOwnVersion" name="yourOwnVersion" placeholder="Представьтесь" required>
                   </label>
                 </div>
-                <div class="input register__input">
+                <div class="input register__input" data-validate-type="text" data-required>
                   <label><span class="input__label">Место работы/учебы</span>
-                    <input type="text" id="workplace" name="workplace">
+                    <input type="text" id="workplace" name="workplace" required>
                   </label>
                 </div>
-                <div class="input register__input">
+                <div class="input register__input" data-validate-type="text" data-required>
                   <label><span class="input__label">Должность</span>
-                    <input type="text" id="jobTitle" name="jobTitle">
+                    <input type="text" id="jobTitle" name="jobTitle" required>
                   </label>
                 </div>
-                <div class="custom-select" data-select=""><span class="custom-select__label">Регион</span><span class="custom-select__placeholder">Выберете Ваш регион</span>
+                <div class="custom-select" data-validate-type="select" data-required data-select=""><span class="custom-select__label">Регион</span>
                   <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
                   <ul class="custom-select__list" role="listbox">
                     <li class="custom-select__item" tabindex="0" data-select-value="Moscow" aria-selected="false" role="option">Москва и Московская область</li>
@@ -149,30 +150,30 @@
                     <li class="custom-select__item" tabindex="0" data-select-value="Yaroslavl" aria-selected="false" role="option">Ярославская область</li>
                   </ul>
                 </div>
-                <div class="input register__input">
+                <div class="input register__input" data-validate-type="email" data-required>
                   <label><span class="input__label">Ваш e-mail</span>
-                    <input type="text" id="email" name="email">
+                    <input type="text" id="email" name="email" required>
                   </label>
                 </div>
-                <div class="input register__input">
+                <div class="input register__input" data-validate-type="phone" data-required>
                   <label><span class="input__label">Контактный телефон</span>
-                    <input type="text" id="phone" name="phone">
+                    <input type="text" id="phone" name="phone" placeholder="+7 (111) 111 11 11" required>
                   </label>
                 </div>
               </fieldset>
               <fieldset class="register__fieldset">
-                <legend class="register__title">Выберите дату участия</legend>
-                <div class="custom-toggle custom-toggle--checkbox">
+                <legend class="register__title">Выберите дату участия</legend><span class="register__error-text"></span>
+                <div class="custom-toggle custom-toggle--checkbox" data-validate-type="toggle-group">
                   <label>
                     <input type="checkbox" value="21 июня (Международная конференция)" id="internationalConference" name="dateParticipation" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">21 июня (Международная конференция)</span>
                   </label>
                 </div>
-                <div class="custom-toggle custom-toggle--checkbox">
+                <div class="custom-toggle custom-toggle--checkbox" data-validate-type="toggle-group">
                   <label>
                     <input type="checkbox" value="22 июня (Секции факультетов РАНХиГС)" id="ranepaFaculties" name="dateParticipation"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">22 июня (Секции факультетов РАНХиГС)</span>
                   </label>
                 </div>
-                <div class="custom-toggle custom-toggle--checkbox">
+                <div class="custom-toggle custom-toggle--checkbox" data-validate-type="toggle-group">
                   <label>
                     <input type="checkbox" value="23 июня (Основной день Форума)" id="mainDay" name="dateParticipation"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">23 июня (Основной день Форума)</span>
                   </label>
@@ -312,32 +313,32 @@
                 <p class="register__text-alert">Пропускной режим в&nbsp;Президентскую библиотеку требует предъявления оригинала документа, удостоверяющего личность (паспорт гражданина&nbsp;РФ или гражданина иностранного государства). Просим заполнить следующую информацию</p>
                 <div class="input register__input">
                   <label><span class="input__label">Серия паспорта</span>
-                    <input type="text" id="passportSeries" name="passportSeries">
+                    <input type="text" id="passportSeries" name="passportSeries" required>
                   </label>
                 </div>
                 <div class="input register__input">
                   <label><span class="input__label">Номер паспорта</span>
-                    <input type="text" id="passportID" name="passportID">
+                    <input type="text" id="passportID" name="passportID" required>
                   </label>
                 </div>
                 <div class="input register__input">
                   <label><span class="input__label">Дата рождения</span>
-                    <input type="text" id="birthday" name="birthday">
+                    <input type="text" id="birthday" name="birthday" required>
                   </label>
                 </div>
                 <div class="input register__input">
                   <label><span class="input__label">Место рождения (как указано в паспорте)</span>
-                    <input type="text" id="placeOfBirth" name="placeOfBirth">
+                    <input type="text" id="placeOfBirth" name="placeOfBirth" required>
                   </label>
                 </div>
                 <div class="input register__input">
                   <label><span class="input__label">Страна проживания</span>
-                    <input type="text" id="countryResidence" name="countryResidence">
+                    <input type="text" id="countryResidence" name="countryResidence" required>
                   </label>
                 </div>
                 <div class="input register__input">
                   <label><span class="input__label">Адрес регистрации</span>
-                    <input type="text" id="registrationAddress" name="countryResidence">
+                    <input type="text" id="registrationAddress" name="countryResidence" required>
                   </label>
                 </div>
                 <div class="custom-toggle custom-toggle--checkbox custom-toggle--checkbox-agree">
@@ -346,7 +347,6 @@
                   </label>
                 </div>
               </fieldset>
-              <button class="btn" type="submit">Зарегистрироваться</button>
             </form>
           </div>
         </div>

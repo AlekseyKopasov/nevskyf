@@ -82,11 +82,14 @@ export class Validator {
 
   _validateTextInput(parent, input) {
     let flag = true;
-    if (input.value.length >= (+input.getAttribute('minlength') || 1)) {
-      this._setItemValidState(parent, input);
-    } else {
+    if (!input.value) {
+      parent.dataset.messageBase = 'Поле обязательно к заполнению';
       this._setItemInvalidState(parent, input);
       flag = false;
+    } else {
+      parent.dataset.messageSuccess = '';
+      this._setItemValidState(parent, input);
+      flag = true;
     }
     return flag;
   }
@@ -104,10 +107,13 @@ export class Validator {
 
   _validateEmailInput(parent, input) {
     let flag = true;
+
     if (new RegExp(this._getMailRegEx(), '').test(input.value)) {
       this._setItemValidState(parent, input);
+      parent.dataset.messageBase = '';
     } else {
       this._setItemInvalidState(parent, input);
+      parent.dataset.messageBase = 'Введите корректный email';
       flag = false;
     }
     return flag;
@@ -115,10 +121,13 @@ export class Validator {
 
   _validatePhoneInput(parent, input) {
     let flag = true;
+
     if (input.value.length >= +parent.dataset.phoneLength) {
       this._setItemValidState(parent, input);
+      parent.dataset.messageBase = '';
     } else {
       this._setItemInvalidState(parent, input);
+      parent.dataset.messageBase = 'Введите телефонный номер';
       flag = false;
     }
     return flag;
@@ -155,7 +164,7 @@ export class Validator {
     } else {
       this._setItemInvalidState(parent, input);
       parent.classList.remove('not-empty');
-      customSelectText.innerHTML = '';
+      customSelectText.innerHTML = 'Поле обязательно к заполнению';
       flag = false;
     }
     return flag;
@@ -193,14 +202,21 @@ export class Validator {
   _validateToggleGroup(parent) {
     const formElements = parent.querySelectorAll('input');
     let flag = true;
+
+    // проверить если все НЕвыбранны = ошибка
+    // проверить если выбрать хотя бы 1 = НЕТ ошибки
     if (this._returnCheckedElements(formElements)) {
       this._removeGroupAria(formElements);
       parent.classList.remove('is-invalid');
       parent.classList.add('is-valid');
       this._message.removeMessage(parent);
+      console.log(1);
     } else {
+      const title = parent.parentElement.querySelector('.register__error-text');
       this._setGroupAria(formElements);
       parent.classList.remove('is-valid');
+      console.log(title);
+      title.textContent = 'Выберите дату';
       flag = false;
     }
     return flag;
@@ -353,6 +369,7 @@ export class Validator {
     if (event.type === 'submit') {
       this._submitEvent = true;
     }
+
     const validateItems = event.target.querySelectorAll('[data-validate-type]');
     const result = this._fullValidate(validateItems);
     this._createStates(event.target);

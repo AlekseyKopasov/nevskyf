@@ -7,7 +7,7 @@
   padding: 60px 0;
 
   @media screen and (max-width: 374px) {
-   padding: 40px 0;
+    padding: 40px 0;
   }
 
   &__form {
@@ -77,6 +77,10 @@
     margin-bottom: 24px;
   }
 
+  &__input--uppercase input {
+    text-transform: uppercase;
+  }
+
   &__sections-wrapper:not(:last-of-type) {
     margin-bottom: 35px;
 
@@ -97,12 +101,11 @@
   &__sections-subtitle {
     margin: 0;
     text-align: center;
-    color: rgba($color-light-sea-green, 0.6);
-    font-weight: 400;
+    color: $color-light-sea-green;
+    font-weight: 300;
 
     @media screen and (max-width: 374px) {
       font-size: 18px;
-      color: $color-light-sea-green;
     }
   }
 

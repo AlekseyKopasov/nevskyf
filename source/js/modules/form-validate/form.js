@@ -93,7 +93,6 @@ export class Form {
     if (!form) {
       return;
     }
-
     const phoneParents = form.querySelectorAll('[data-validate-type="phone"]');
     phoneParents.forEach((item) => this._initPhoneInput(item));
 
@@ -115,6 +114,7 @@ export class Form {
 
   init() {
     this._validateParent = document.querySelectorAll('[data-form-validate]');
+
     if (!this._validateParent.length) {
       return;
     }

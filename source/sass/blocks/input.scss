@@ -69,7 +69,7 @@
     right: 0;
     bottom: 35px;
 
-    color: #ff1553;
+    color: $color-tomato;
 
     opacity: 0;
 
@@ -83,22 +83,22 @@
   &.is-invalid {
     input,
     textarea {
-      border: 2px solid #ff1553;
+      border: 2px solid $color-tomato;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba(#ff1553, 0.5);
+        border: 2px solid rgba($color-tomato, 0.5);
       }
     }
   }
 
   &.is-valid {
     input {
-      border: 2px solid #22b259;
+      border: 2px solid $color-light-sea-green;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba(#22b259, 0.5);
+        border: 2px solid rgba($color-light-sea-green, 0.5);
       }
     }
   }
@@ -106,14 +106,14 @@
   .input-message {
     position: absolute;
     right: 0;
-    bottom: -5px;
+    bottom: -25px;
 
     &.is-invalid {
-      color: #ff0000;
+      color: $color-tomato;
     }
 
     &.is-valid {
-      color: #15ab07;
+      color: $color-light-sea-green;
     }
   }
 }
