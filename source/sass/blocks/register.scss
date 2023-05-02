@@ -38,7 +38,7 @@
     margin-bottom: 24px;
   }
 
-  &__sections-wrapper {
+  &__sections-wrapper:not(:last-of-type) {
     margin-bottom: 35px;
   }
 
@@ -60,5 +60,11 @@
 
   &__sections-subtitle {
     padding-left: 5px;
+  }
+
+  &__text-alert {
+    margin: 0 0 20px 0;
+    color: $color-tomato;
+    font-style: italic;
   }
 }

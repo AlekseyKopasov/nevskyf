@@ -302,115 +302,138 @@ mixin register()
             isRequired: true
           })(class="register__input")
 
-      fieldset.register__fieldset
-        legend.register__title Выберите дату участия
+        fieldset.register__fieldset
+          legend.register__title Выберите дату участия
 
-        +custom-toggle({
-          inputId: 'internationalConference',
-          inputLabel: '21 июня (Международная конференция)',
-          inputType: 'checkbox',
-          inputChecked: true,
-          inputName: 'dateParticipation',
-          inputValue: '21 июня (Международная конференция)'
-        })(class="custom-toggle--checkbox")
-
-        +custom-toggle({
-          inputId: 'ranepaFaculties',
-          inputLabel: '22 июня (Секции факультетов РАНХиГС)',
-          inputType: 'checkbox',
-          inputChecked: false,
-          inputName: 'dateParticipation',
-          inputValue: '22 июня (Секции факультетов РАНХиГС)'
-        })(class="custom-toggle--checkbox")
-
-        +custom-toggle({
-          inputId: 'mainDay',
-          inputLabel: '23 июня (Основной день Форума)',
-          inputType: 'checkbox',
-          inputChecked: false,
-          inputName: 'dateParticipation',
-          inputValue: '23 июня (Основной день Форума)'
-        })(class="custom-toggle--checkbox")
-
-      fieldset.register__fieldset
-        legend.register__title Укажите мероприятия, в которых Вы будете участвовать
-
-        .register__sections-wrapper
-          .register__sections(data-sections-tab="internationalConference")
-            h2.register__sections-title 21 июня:
-            +custom-toggle({
-              inputId: 'internationalConference_sect-1',
-              inputLabel: '<b>Секция 1 — </b> Международная конференция, посвященная вопросам интернационализации вузов',
-              inputType: 'checkbox',
-              inputChecked: false,
-              inputName: 'sectons',
-              inputValue: 'Международная конференция, посвященная вопросам интернационализации вузов'
+          +custom-toggle({
+            inputId: 'internationalConference',
+            inputLabel: '21 июня (Международная конференция)',
+            inputType: 'checkbox',
+            inputChecked: true,
+            inputName: 'dateParticipation',
+            inputValue: '21 июня (Международная конференция)'
           })(class="custom-toggle--checkbox")
 
-        .register__sections-wrapper
-          .register__sections(data-sections-tab="ranepaFaculties")
-            h2.register__sections-title 22 июня:
+          +custom-toggle({
+            inputId: 'ranepaFaculties',
+            inputLabel: '22 июня (Секции факультетов РАНХиГС)',
+            inputType: 'checkbox',
+            inputChecked: false,
+            inputName: 'dateParticipation',
+            inputValue: '22 июня (Секции факультетов РАНХиГС)'
+          })(class="custom-toggle--checkbox")
 
-            each item, index in ranepaFaculties
+          +custom-toggle({
+            inputId: 'mainDay',
+            inputLabel: '23 июня (Основной день Форума)',
+            inputType: 'checkbox',
+            inputChecked: false,
+            inputName: 'dateParticipation',
+            inputValue: '23 июня (Основной день Форума)'
+          })(class="custom-toggle--checkbox")
+
+        fieldset.register__fieldset
+          legend.register__title Укажите мероприятия, в&nbsp;которых&nbsp;Вы будете участвовать
+
+          .register__sections-wrapper
+            .register__sections(data-sections-tab="internationalConference")
+              h2.register__sections-title 21 июня:
               +custom-toggle({
-                inputId: item.id + '-' + (index + 1),
-                inputLabel: item.label,
-                inputType: item.type,
-                inputChecked: item.isChecked,
-                inputName: item.name,
-                inputValue: item.value
-              })(class= item.extra)
+                inputId: 'internationalConference_sect-1',
+                inputLabel: '<b>Секция 1 — </b> Международная конференция, посвященная вопросам интернационализации вузов',
+                inputType: 'checkbox',
+                inputChecked: false,
+                inputName: 'sectons',
+                inputValue: 'Международная конференция, посвященная вопросам интернационализации вузов'
+            })(class="custom-toggle--checkbox")
 
-        .register__sections-wrapper
-          .register__sections(data-sections-tab="mainDay")
-            h2.register__sections-title 23 июня:
-            .register__section
-              h3.register__sections-subtitle Дневная сессия
-              each item, index in mainDay
-                if index < 4
-                  +custom-toggle({
-                    inputId: item.id + '-' + (index + 1),
-                    inputLabel: item.label,
-                    inputType: item.type,
-                    inputChecked: item.isChecked,
-                    inputName: item.name,
-                    inputValue: item.value
-                  })(class= item.extra)
-            .register__section
-              h3.register__sections-subtitle Вечерняя сессия
-              each item, index in mainDay
-                if index >= 4
-                  +custom-toggle({
-                    inputId: item.id + '-' + (index + 1),
-                    inputLabel: item.label,
-                    inputType: item.type,
-                    inputChecked: item.isChecked,
-                    inputName: item.name,
-                    inputValue: item.value
-                  })(class= item.extra)
+          .register__sections-wrapper
+            .register__sections(data-sections-tab="ranepaFaculties")
+              h2.register__sections-title 22 июня:
 
+              each item, index in ranepaFaculties
+                +custom-toggle({
+                  inputId: item.id + '-' + (index + 1),
+                  inputLabel: item.label,
+                  inputType: item.type,
+                  inputChecked: item.isChecked,
+                  inputName: item.name,
+                  inputValue: item.value
+                })(class= item.extra)
 
-        fieldset
-          legend Паспортные данные
-          h2 Пропускной режим в Президентскую библиотеку требует предъявления оригинала документа, удостоверяющего личность (паспорт гражданина РФ или гражданина иностранного государства). Просим заполнить следующую информацию
+          .register__sections-wrapper
+            .register__sections(data-sections-tab="mainDay")
+              h2.register__sections-title 23 июня:
+              .register__section
+                h3.register__sections-subtitle Дневная сессия
+                each item, index in mainDay
+                  if index < 4
+                    +custom-toggle({
+                      inputId: item.id + '-' + (index + 1),
+                      inputLabel: item.label,
+                      inputType: item.type,
+                      inputChecked: item.isChecked,
+                      inputName: item.name,
+                      inputValue: item.value
+                    })(class= item.extra)
+              .register__section
+                h3.register__sections-subtitle Вечерняя сессия
+                each item, index in mainDay
+                  if index >= 4
+                    +custom-toggle({
+                      inputId: item.id + '-' + (index + 1),
+                      inputLabel: item.label,
+                      inputType: item.type,
+                      inputChecked: item.isChecked,
+                      inputName: item.name,
+                      inputValue: item.value
+                    })(class= item.extra)
 
-          label Серия паспорта
-          input(type="number")
+        fieldset.register__fieldset
+          legend.register__title Паспортные данные
+          p.register__text-alert Пропускной режим в&nbsp;Президентскую библиотеку требует предъявления оригинала документа, удостоверяющего личность (паспорт гражданина&nbsp;РФ или гражданина иностранного государства). Просим заполнить следующую информацию
 
-          label Номер  паспорта
-          input(type="number")
+          +custom-input({
+            inputLabel: 'Серия паспорта',
+            inputId: 'passportSeries',
+            inputName: 'passportSeries',
+            isRequired: true
+          })(class="register__input")
 
-          label Дата рождения
-          input(type="text")
+          +custom-input({
+            inputLabel: 'Номер паспорта',
+            inputId: 'passportID',
+            inputName: 'passportID',
+            isRequired: true
+          })(class="register__input")
 
-          label Место рождения (как указано в паспорте)
-          input(type="text")
+          +custom-input({
+            inputLabel: 'Дата рождения',
+            inputId: 'birthday',
+            inputName: 'birthday',
+            isRequired: true
+          })(class="register__input")
 
-          label Страна проживания
-          input(type="text")
+          +custom-input({
+            inputLabel: 'Место рождения (как указано в паспорте)',
+            inputId: 'placeOfBirth',
+            inputName: 'placeOfBirth',
+            isRequired: true
+          })(class="register__input")
 
-          label Адрес регистрации
-          input(type="text")
+          +custom-input({
+            inputLabel: 'Страна проживания',
+            inputId: 'countryResidence',
+            inputName: 'countryResidence',
+            isRequired: true
+          })(class="register__input")
+
+          +custom-input({
+            inputLabel: 'Адрес регистрации',
+            inputId: 'registrationAddress',
+            inputName: 'countryResidence',
+            isRequired: true
+          })(class="register__input")
 
 
         fieldset

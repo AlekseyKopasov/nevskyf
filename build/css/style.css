@@ -608,7 +608,7 @@ button,
 .register__input:not(:last-of-type) {
   margin-bottom: 24px;
 }
-.register__sections-wrapper {
+.register__sections-wrapper:not(:last-of-type) {
   margin-bottom: 35px;
 }
 .register__section {
@@ -625,6 +625,11 @@ button,
 }
 .register__sections-subtitle {
   padding-left: 5px;
+}
+.register__text-alert {
+  margin: 0 0 20px 0;
+  color: #ff5943;
+  font-style: italic;
 }
 
 .header {
