@@ -30,11 +30,11 @@
       flex-grow: 1;
       min-height: 48px;
       padding: 10px;
-      color: #eee;
+      color: $color-whisper;
 
       border: 2px solid rgba(#ffffff, 0.2);
       border-radius: 5px;
-      background-color: $color-midnight-express;
+      background-color: transparent;
       outline: none;
 
       transition: border 0.3s ease;
@@ -42,6 +42,10 @@
       @media screen and (max-width: 767px) {
         max-width: unset;
         width: 100%;
+      }
+
+      &::placeholder {
+        color: rgba(#ffffff, 0.5);
       }
 
       &:hover {

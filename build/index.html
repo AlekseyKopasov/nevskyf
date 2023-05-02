@@ -18,7 +18,7 @@
             <h1 class="register__headine">Регистрация на&nbsp;VII Международный Невский&nbsp;Форум</h1>
             <form class="register__form">
               <fieldset class="register__fieldset">
-                <legend class="register__title">Данные для регистрации</legend>
+                <legend class="register__title register__title--hidden">Данные для регистрации</legend>
                 <div class="input register__input register__input--uppercase">
                   <label><span class="input__label">Фамилия</span>
                     <input type="text" id="lastname" name="lastname">
@@ -34,10 +34,10 @@
                     <input type="text" id="surname" name="surname">
                   </label>
                 </div>
-                <div class="custom-select" data-select=""><span class="custom-select__label">Представьтесь</span>
+                <div class="custom-select" data-select=""><span class="custom-select__label">Представьтесь</span><span class="custom-select__placeholder">Представьтесь</span>
                   <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
                   <ul class="custom-select__list" role="listbox">
-                    <li class="custom-select__item" tabindex="0" data-select-value="ranepaUniversity" aria-selected="true" role="option">Представитель РАНХиГС</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="ranepaUniversity" aria-selected="false" role="option">Представитель РАНХиГС</li>
                     <li class="custom-select__item" tabindex="0" data-select-value="anotherUniversity" aria-selected="false" role="option">Представитель другого вуза</li>
                     <li class="custom-select__item" tabindex="0" data-select-value="student" aria-selected="false" role="option">Обучающийся</li>
                     <li class="custom-select__item" tabindex="0" data-select-value="businessman" aria-selected="false" role="option">Представитель бизнеса</li>
@@ -60,30 +60,86 @@
                     <input type="text" id="jobTitle" name="jobTitle">
                   </label>
                 </div>
-                <div class="custom-select" data-select=""><span class="custom-select__label">Регион</span>
+                <div class="custom-select" data-select=""><span class="custom-select__label">Регион</span><span class="custom-select__placeholder">Выберете Ваш регион</span>
                   <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
                   <ul class="custom-select__list" role="listbox">
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
-                    <li class="custom-select__item" tabindex="0" aria-selected="false" role="option"></li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Moscow" aria-selected="false" role="option">Москва и Московская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Saint-Petersburg" aria-selected="false" role="option">Санкт-Петербург и область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Adygeya" aria-selected="false" role="option">Республика Адыгея</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Altai" aria-selected="false" role="option">Алтайский край</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Amur" aria-selected="false" role="option">Амурская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Arkhangelsk" aria-selected="false" role="option">Архангельская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Bashkortastan" aria-selected="false" role="option">Республика Башкортостан</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Belgorod" aria-selected="false" role="option">Белгородская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Bryansk" aria-selected="false" role="option">Брянская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Buryatia" aria-selected="false" role="option">Республика Бурятия</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Vladimir" aria-selected="false" role="option">Владимирская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Volgograd" aria-selected="false" role="option">Волгоградская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Vologda" aria-selected="false" role="option">Вологодская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Voronezh" aria-selected="false" role="option">Воронежская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Daghestan" aria-selected="false" role="option">Республика Дагестан</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Jewish" aria-selected="false" role="option">Еврейская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Ivanovo" aria-selected="false" role="option">Ивановская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Irkutsk" aria-selected="false" role="option">Иркутская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Kabardian-Balkar" aria-selected="false" role="option">Кабардино-Балкарская Республика</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Kaliningrad" aria-selected="false" role="option">Калининградская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Kalmykia" aria-selected="false" role="option">Республика Калмыкия</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Kaluga" aria-selected="false" role="option">Калужская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Kamchatka" aria-selected="false" role="option">Камчатская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Karelia" aria-selected="false" role="option">Республика Карелия</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Kemerovo" aria-selected="false" role="option">Кемеровская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Kirov" aria-selected="false" role="option">Кировская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Komi" aria-selected="false" role="option">Республика Коми</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Kostroma" aria-selected="false" role="option">Костромская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Krasnodar" aria-selected="false" role="option">Краснодарский край</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Krasnoyarsk" aria-selected="false" role="option">Красноярский край</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Kurgan" aria-selected="false" role="option">Курганская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Kursk" aria-selected="false" role="option">Курская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Lipetsk" aria-selected="false" role="option">Липецкая область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Magadan" aria-selected="false" role="option">Магаданская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Mariy_El" aria-selected="false" role="option">Республика Марий Эл</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Mordovia" aria-selected="false" role="option">Республика Мордовия</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Murmansk" aria-selected="false" role="option">Мурманская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="" aria-selected="false" role="option">Нижегородская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Nizhny-novgorod" aria-selected="false" role="option">Новгородская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Novosibirsk" aria-selected="false" role="option">Новосибирская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Omsk" aria-selected="false" role="option">Омская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Orenburg" aria-selected="false" role="option">Оренбургская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Oryol" aria-selected="false" role="option">Орловская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Penza" aria-selected="false" role="option">Пензенская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Perm" aria-selected="false" role="option">Пермская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Primorsky" aria-selected="false" role="option">Приморский край</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Pskov" aria-selected="false" role="option">Псковская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Rostov" aria-selected="false" role="option">Ростовская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Ryazan" aria-selected="false" role="option">Рязанская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Samara" aria-selected="false" role="option">Самарская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Saratov" aria-selected="false" role="option">Саратовская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Yakutia" aria-selected="false" role="option">Республика Саха (Якутия)</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Sakhalin" aria-selected="false" role="option">Сахалинская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Sverdlovsk" aria-selected="false" role="option">Свердловская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Ossetia -Alania" aria-selected="false" role="option">Республика Северная Осетия - Алания</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Smolensk" aria-selected="false" role="option">Смоленская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Stavropol" aria-selected="false" role="option">Ставропольский край</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Tambov" aria-selected="false" role="option">Тамбовская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Tatarstan" aria-selected="false" role="option">Республика Татарстан</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Tver" aria-selected="false" role="option">Тверская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Tomsk" aria-selected="false" role="option">Томская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Tyva" aria-selected="false" role="option">Республика Тыва</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Tula " aria-selected="false" role="option">Тульская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Tyumen" aria-selected="false" role="option">Тюменская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Udmurt" aria-selected="false" role="option">Удмуртская Республика</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Ulyanovsk" aria-selected="false" role="option">Ульяновская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Khabarovsk" aria-selected="false" role="option">Хабаровский край</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Khakassia" aria-selected="false" role="option">Республика Хакасия</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Khanty-Mansi" aria-selected="false" role="option">Ханты-Мансийский АО</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Chelyabinsk" aria-selected="false" role="option">Челябинская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Chechen" aria-selected="false" role="option">Чеченская Республика</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Ingushetia" aria-selected="false" role="option">Республика Ингушетия</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Chita" aria-selected="false" role="option">Читинская область</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Chuvash" aria-selected="false" role="option">Чувашская Республика</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Chukotka" aria-selected="false" role="option">Чукотский АО</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Yamalo-Nenets" aria-selected="false" role="option">Ямало-Ненецкий АО</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="Yaroslavl" aria-selected="false" role="option">Ярославская область</li>
                   </ul>
                 </div>
                 <div class="input register__input">

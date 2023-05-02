@@ -28,10 +28,11 @@
     top: 50%;
     left: 10px;
 
-    transform: translateY(-50%);
+    transform: translateY(5%);
 
     transition: transform 0.3s ease, opacity 0.3s ease;
 
+    color: rgba(#ffffff, 0.5);
     pointer-events: none;
 
     @media screen and (max-width: 767px) {
@@ -99,7 +100,7 @@
 
     list-style: none;
 
-    background-color: $color-midnight-express;
+    background-color: rgba($color-midnight-express, 0.9);
     border: 2px solid rgba(#ffffff, 0.2);
     transform: translateY(100%);
     visibility: hidden;

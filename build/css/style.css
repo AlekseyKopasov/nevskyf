@@ -364,7 +364,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-  background-color: #040b3d;
+  background-color: rgba(4, 11, 61, 0.9);
 }
 
 a {
@@ -383,10 +383,14 @@ textarea {
   resize: none;
 }
 
-input:-webkit-autofill {
-  -webkit-box-shadow: inset 0 0 0 1000px #eeeeee;
-          box-shadow: inset 0 0 0 1000px #eeeeee;
-  -webkit-text-fill-color: #000000;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(4, 11, 61, 0.8784313725);
+          box-shadow: inset 0 0 0 1000px rgba(4, 11, 61, 0.8784313725);
+  caret-color: #eeeeee;
+  -webkit-text-fill-color: #eeeeee;
 }
 
 input,
@@ -593,6 +597,9 @@ button,
   margin-bottom: 18px;
   font-size: 24px;
   line-height: 1.2;
+}
+.register__title--hidden {
+  display: none;
 }
 .register__input--uppercase input {
   text-transform: uppercase;
@@ -838,10 +845,10 @@ button,
           flex-grow: 1;
   min-height: 48px;
   padding: 10px;
-  color: #eee;
+  color: #eeeeee;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
-  background-color: #040b3d;
+  background-color: transparent;
   outline: none;
   -webkit-transition: border 0.3s ease;
   -o-transition: border 0.3s ease;
@@ -855,6 +862,24 @@ button,
     max-width: unset;
     width: 100%;
   }
+}
+.input label input::-webkit-input-placeholder, .input label textarea::-webkit-input-placeholder, .custom-textarea label input::-webkit-input-placeholder, .custom-textarea label textarea::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.input label input::-moz-placeholder, .input label textarea::-moz-placeholder, .custom-textarea label input::-moz-placeholder, .custom-textarea label textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.input label input:-ms-input-placeholder, .input label textarea:-ms-input-placeholder, .custom-textarea label input:-ms-input-placeholder, .custom-textarea label textarea:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.input label input::-ms-input-placeholder, .input label textarea::-ms-input-placeholder, .custom-textarea label input::-ms-input-placeholder, .custom-textarea label textarea::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.input label input::placeholder,
+.input label textarea::placeholder,
+.custom-textarea label input::placeholder,
+.custom-textarea label textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 .input label input:hover,
 .input label textarea:hover,
@@ -1088,14 +1113,15 @@ button,
   position: absolute;
   top: 50%;
   left: 10px;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(5%);
+      -ms-transform: translateY(5%);
+          transform: translateY(5%);
   -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
   -o-transition: transform 0.3s ease, opacity 0.3s ease;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+  color: rgba(255, 255, 255, 0.5);
   pointer-events: none;
 }
 @media screen and (max-width: 767px) {
@@ -1158,7 +1184,7 @@ button,
   padding: 0;
   overflow-y: auto;
   list-style: none;
-  background-color: #040b3d;
+  background-color: rgba(4, 11, 61, 0.9);
   border: 2px solid rgba(255, 255, 255, 0.2);
   -webkit-transform: translateY(100%);
       -ms-transform: translateY(100%);

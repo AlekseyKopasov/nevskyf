@@ -4,8 +4,8 @@ mixin register()
       {
         text: 'Представитель РАНХиГС',
         value: 'ranepaUniversity',
-        ariaSelected: true,
-        isActive: true
+        ariaSelected: false,
+        isActive: false
       },
       {
         text: 'Представитель другого вуза',
@@ -44,7 +44,7 @@ mixin register()
       h1.register__headine Регистрация на&nbsp;VII Международный Невский&nbsp;Форум
       form.register__form
         fieldset.register__fieldset
-          legend.register__title Данные для регистрации
+          legend.register__title.register__title--hidden Данные для регистрации
 
           +custom-input({
             inputLabel: 'Фамилия',
@@ -69,7 +69,8 @@ mixin register()
 
           +custom-select({
             label: 'Представьтесь',
-            optionsList: representativeList
+            optionsList: representativeList,
+            placeholder: 'Представьтесь'
           })(class="custom-select" data-select='')
 
           +custom-input({
@@ -95,7 +96,8 @@ mixin register()
 
           +custom-select({
             label: 'Регион',
-            optionsList: '../../json/region.pug'
+            optionsList: regions,
+            placeholder: 'Выберете Ваш регион'
           })(class="custom-select" data-select='')
 
           +custom-input({
