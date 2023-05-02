@@ -364,30 +364,30 @@ mixin register()
         .register__sections-wrapper
           .register__sections(data-sections-tab="mainDay")
             h2.register__sections-title 23 июня:
-            h3.register__sections-subtitle Дневная сессия
-
-            each item, index in mainDay
-              if index < 4
-                +custom-toggle({
-                  inputId: item.id + '-' + (index + 1),
-                  inputLabel: item.label,
-                  inputType: item.type,
-                  inputChecked: item.isChecked,
-                  inputName: item.name,
-                  inputValue: item.value
-                })(class= item.extra)
-
-            h3.register__sections-subtitle Вечерняя сессия
-            each item, index in mainDay
-              if index >= 4
-                +custom-toggle({
-                  inputId: item.id + '-' + (index + 1),
-                  inputLabel: item.label,
-                  inputType: item.type,
-                  inputChecked: item.isChecked,
-                  inputName: item.name,
-                  inputValue: item.value
-                })(class= item.extra)
+            .register__section
+              h3.register__sections-subtitle Дневная сессия
+              each item, index in mainDay
+                if index < 4
+                  +custom-toggle({
+                    inputId: item.id + '-' + (index + 1),
+                    inputLabel: item.label,
+                    inputType: item.type,
+                    inputChecked: item.isChecked,
+                    inputName: item.name,
+                    inputValue: item.value
+                  })(class= item.extra)
+            .register__section
+              h3.register__sections-subtitle Вечерняя сессия
+              each item, index in mainDay
+                if index >= 4
+                  +custom-toggle({
+                    inputId: item.id + '-' + (index + 1),
+                    inputLabel: item.label,
+                    inputType: item.type,
+                    inputChecked: item.isChecked,
+                    inputName: item.name,
+                    inputValue: item.value
+                  })(class= item.extra)
 
 
         fieldset
