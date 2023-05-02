@@ -231,10 +231,6 @@ mixin register()
     .container
       h1.register__headine Регистрация на&nbsp;VII Международный Невский&nbsp;Форум
       form.register__form
-        +btn({
-            text: 'Зарегистрироваться',
-            type: 'submit'
-          })
         fieldset.register__fieldset
           legend.register__title.register__title--hidden Данные для регистрации
 
@@ -337,9 +333,10 @@ mixin register()
             data-required
             )
 
-        fieldset.register__fieldset
+        fieldset.register__fieldset(data-validate-type="toggle-group")
           legend.register__title Выберите дату участия
-          span.register__error-text
+          p.register__error-title-wrap
+            span.register__error-text
 
           +custom-toggle({
             inputId: 'internationalConference',
@@ -348,9 +345,7 @@ mixin register()
             inputChecked: true,
             inputName: 'dateParticipation',
             inputValue: '21 июня (Международная конференция)'
-          })(class="custom-toggle--checkbox"
-            data-validate-type="toggle-group"
-          )
+          })(class="custom-toggle--checkbox")
 
           +custom-toggle({
             inputId: 'ranepaFaculties',
@@ -359,9 +354,7 @@ mixin register()
             inputChecked: false,
             inputName: 'dateParticipation',
             inputValue: '22 июня (Секции факультетов РАНХиГС)'
-          })(class="custom-toggle--checkbox"
-            data-validate-type="toggle-group"
-          )
+          })(class="custom-toggle--checkbox")
 
           +custom-toggle({
             inputId: 'mainDay',
@@ -370,12 +363,15 @@ mixin register()
             inputChecked: false,
             inputName: 'dateParticipation',
             inputValue: '23 июня (Основной день Форума)'
-          })(class="custom-toggle--checkbox"
-            data-validate-type="toggle-group"
-          )
-
-        fieldset.register__fieldset
+          })(class="custom-toggle--checkbox")
+        +btn({
+          text: 'Зарегистрироваться',
+          type: 'submit'
+        })
+        fieldset.register__fieldset(data-validate-type="toggle-group")
           legend.register__title Укажите мероприятия, в&nbsp;которых&nbsp;Вы будете участвовать
+          p.register__error-title-wrap
+            span.register__error-text
 
           .register__sections-wrapper
             .register__sections(data-sections-tab="internationalConference")
@@ -385,7 +381,7 @@ mixin register()
                 inputLabel: '<b>Секция 1 — </b> Международная конференция, посвященная вопросам интернационализации вузов',
                 inputType: 'checkbox',
                 inputChecked: false,
-                inputName: 'sectons',
+                inputName: 'sections',
                 inputValue: 'Международная конференция, посвященная вопросам интернационализации вузов'
             })(class="custom-toggle--checkbox")
 

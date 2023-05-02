@@ -201,22 +201,24 @@ export class Validator {
 
   _validateToggleGroup(parent) {
     const formElements = parent.querySelectorAll('input');
+    const title = parent.parentElement.querySelector('.register__error-text');
     let flag = true;
-
-    // проверить если все НЕвыбранны = ошибка
-    // проверить если выбрать хотя бы 1 = НЕТ ошибки
     if (this._returnCheckedElements(formElements)) {
       this._removeGroupAria(formElements);
-      parent.classList.remove('is-invalid');
-      parent.classList.add('is-valid');
-      this._message.removeMessage(parent);
-      console.log(1);
+      formElements.forEach((checkbox) => {
+        checkbox.parentElement.parentElement.classList.remove('is-invalid');
+        checkbox.parentElement.parentElement.classList.add('is-valid');
+      });
+
+      title.textContent = '';
     } else {
-      const title = parent.parentElement.querySelector('.register__error-text');
       this._setGroupAria(formElements);
-      parent.classList.remove('is-valid');
-      console.log(title);
+      this._message.removeMessage(parent);
       title.textContent = 'Выберите дату';
+      formElements.forEach((checkbox) => {
+        checkbox.parentElement.parentElement.classList.add('is-invalid');
+        checkbox.parentElement.parentElement.classList.remove('is-valid');
+      });
       flag = false;
     }
     return flag;

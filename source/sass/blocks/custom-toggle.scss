@@ -126,8 +126,8 @@
   }
 
   &.is-invalid {
-    label span {
-      color: #ff1553;
+    .custom-toggle__icon {
+      border: 1.5px solid $color-tomato;
     }
   }
 

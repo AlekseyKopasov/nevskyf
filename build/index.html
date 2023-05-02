@@ -24,7 +24,6 @@
           <div class="container">
             <h1 class="register__headine">Регистрация на&nbsp;VII Международный Невский&nbsp;Форум</h1>
             <form class="register__form">
-              <button class="btn" type="submit">Зарегистрироваться</button>
               <fieldset class="register__fieldset">
                 <legend class="register__title register__title--hidden">Данные для регистрации</legend>
                 <div class="input register__input register__input--uppercase" data-validate-type="text" data-required>
@@ -161,32 +160,35 @@
                   </label>
                 </div>
               </fieldset>
-              <fieldset class="register__fieldset">
-                <legend class="register__title">Выберите дату участия</legend><span class="register__error-text"></span>
-                <div class="custom-toggle custom-toggle--checkbox" data-validate-type="toggle-group">
+              <fieldset class="register__fieldset" data-validate-type="toggle-group">
+                <legend class="register__title">Выберите дату участия</legend>
+                <p class="register__error-title-wrap"><span class="register__error-text"></span></p>
+                <div class="custom-toggle custom-toggle--checkbox">
                   <label>
                     <input type="checkbox" value="21 июня (Международная конференция)" id="internationalConference" name="dateParticipation" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">21 июня (Международная конференция)</span>
                   </label>
                 </div>
-                <div class="custom-toggle custom-toggle--checkbox" data-validate-type="toggle-group">
+                <div class="custom-toggle custom-toggle--checkbox">
                   <label>
                     <input type="checkbox" value="22 июня (Секции факультетов РАНХиГС)" id="ranepaFaculties" name="dateParticipation"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">22 июня (Секции факультетов РАНХиГС)</span>
                   </label>
                 </div>
-                <div class="custom-toggle custom-toggle--checkbox" data-validate-type="toggle-group">
+                <div class="custom-toggle custom-toggle--checkbox">
                   <label>
                     <input type="checkbox" value="23 июня (Основной день Форума)" id="mainDay" name="dateParticipation"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">23 июня (Основной день Форума)</span>
                   </label>
                 </div>
               </fieldset>
-              <fieldset class="register__fieldset">
+              <button class="btn" type="submit">Зарегистрироваться</button>
+              <fieldset class="register__fieldset" data-validate-type="toggle-group">
                 <legend class="register__title">Укажите мероприятия, в&nbsp;которых&nbsp;Вы будете участвовать</legend>
+                <p class="register__error-title-wrap"><span class="register__error-text"></span></p>
                 <div class="register__sections-wrapper">
                   <div class="register__sections" data-sections-tab="internationalConference">
                     <h2 class="register__sections-title">21 июня:</h2>
                     <div class="custom-toggle custom-toggle--checkbox">
                       <label>
-                        <input type="checkbox" value="Международная конференция, посвященная вопросам интернационализации вузов" id="internationalConference_sect-1" name="sectons"><span class="custom-toggle__icon"></span><span class="custom-toggle__label"><b>Секция 1 — </b> Международная конференция, посвященная вопросам интернационализации вузов</span>
+                        <input type="checkbox" value="Международная конференция, посвященная вопросам интернационализации вузов" id="internationalConference_sect-1" name="sections"><span class="custom-toggle__icon"></span><span class="custom-toggle__label"><b>Секция 1 — </b> Международная конференция, посвященная вопросам интернационализации вузов</span>
                       </label>
                     </div>
                   </div>

@@ -723,6 +723,16 @@ button,
     text-align: center;
   }
 }
+.register__error-title-wrap {
+  position: relative;
+  margin: 0;
+  color: #ff5943;
+}
+.register__error-text {
+  position: absolute;
+  top: -15px;
+  left: 0;
+}
 
 .modal {
   position: fixed;
@@ -1151,8 +1161,8 @@ button,
 .custom-toggle input:checked + .custom-toggle__icon::before {
   background-color: #eeeeee;
 }
-.custom-toggle.is-invalid label span {
-  color: #ff1553;
+.custom-toggle.is-invalid .custom-toggle__icon {
+  border: 1.5px solid #ff5943;
 }
 .custom-toggle .input-message {
   position: absolute;

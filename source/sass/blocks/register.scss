@@ -139,4 +139,16 @@
       text-align: center;
     }
   }
+
+  &__error-title-wrap {
+    position: relative;
+    margin: 0;
+    color: $color-tomato;
+  }
+
+  &__error-text {
+    position: absolute;
+    top: -15px;
+    left: 0;
+  }
 }
