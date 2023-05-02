@@ -19,17 +19,17 @@
             <form class="register__form">
               <fieldset class="register__fieldset">
                 <legend class="register__title register__title--hidden">Данные для регистрации</legend>
-                <div class="input register__input register__input--uppercase">
+                <div class="input register__input">
                   <label><span class="input__label">Фамилия</span>
                     <input type="text" id="lastname" name="lastname">
                   </label>
                 </div>
-                <div class="input register__input register__input--uppercase">
+                <div class="input register__input">
                   <label><span class="input__label">Имя</span>
                     <input type="text" id="name" name="name">
                   </label>
                 </div>
-                <div class="input register__input register__input--uppercase">
+                <div class="input register__input">
                   <label><span class="input__label">Отчество</span>
                     <input type="text" id="surname" name="surname">
                   </label>
@@ -154,14 +154,23 @@
                 </div>
               </fieldset>
             </form>
-            <fieldset>
-              <legend>Выберите дату участия</legend>
-              <label>21 июня (Международная конференция)</label>
-              <input type="checkbox">
-              <label>22 июня (Секции факультетов РАНХиГС)</label>
-              <input type="checkbox">
-              <label>23 июня (Основной день Форума)</label>
-              <input type="checkbox">
+            <fieldset class="register__fieldset">
+              <legend class="register__title">Выберите дату участия</legend>
+              <div class="custom-toggle custom-toggle--checkbox">
+                <label>
+                  <input type="checkbox" value="21 июня (Международная конференция)" id="internationalConference" name="dateParticipation"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">21 июня (Международная конференция)</span>
+                </label>
+              </div>
+              <div class="custom-toggle custom-toggle--checkbox">
+                <label>
+                  <input type="checkbox" value="22 июня (Секции факультетов РАНХиГС)" id="ranepaFaculties" name="dateParticipation"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">22 июня (Секции факультетов РАНХиГС)</span>
+                </label>
+              </div>
+              <div class="custom-toggle custom-toggle--checkbox">
+                <label>
+                  <input type="checkbox" value="23 июня (Основной день Форума)" id="mainDay" name="dateParticipation"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">23 июня (Основной день Форума)</span>
+                </label>
+              </div>
             </fieldset>
             <fieldset>
               <legend>Укажите мероприятия, в которых Вы будете участвовать</legend>

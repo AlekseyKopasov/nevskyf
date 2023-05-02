@@ -51,21 +51,21 @@ mixin register()
             inputId: 'lastname',
             inputName: 'lastname',
             isRequired: true
-          })(class="register__input register__input--uppercase")
+          })(class="register__input")
 
           +custom-input({
             inputLabel: 'Имя',
             inputId: 'name',
             inputName: 'name',
             isRequired: true
-          })(class="register__input register__input--uppercase")
+          })(class="register__input")
 
           +custom-input({
             inputLabel: 'Отчество',
             inputId: 'surname',
             inputName: 'surname',
             isRequired: true
-          })(class="register__input register__input--uppercase")
+          })(class="register__input")
 
           +custom-select({
             label: 'Представьтесь',
@@ -114,17 +114,35 @@ mixin register()
             isRequired: true
           })(class="register__input")
 
-      fieldset
-        legend Выберите дату участия
+      fieldset.register__fieldset
+        legend.register__title Выберите дату участия
 
-        label 21 июня (Международная конференция)
-        input(type="checkbox")
+        +custom-toggle({
+          inputId: 'internationalConference',
+          inputLabel: '21 июня (Международная конференция)',
+          inputType: 'checkbox',
+          inputChecked: false,
+          inputName: 'dateParticipation',
+          inputValue: '21 июня (Международная конференция)'
+        })(class="custom-toggle--checkbox")
 
-        label 22 июня (Секции факультетов РАНХиГС)
-        input(type="checkbox")
+        +custom-toggle({
+          inputId: 'ranepaFaculties',
+          inputLabel: '22 июня (Секции факультетов РАНХиГС)',
+          inputType: 'checkbox',
+          inputChecked: false,
+          inputName: 'dateParticipation',
+          inputValue: '22 июня (Секции факультетов РАНХиГС)'
+        })(class="custom-toggle--checkbox")
 
-        label 23 июня (Основной день Форума)
-        input(type="checkbox")
+        +custom-toggle({
+          inputId: 'mainDay',
+          inputLabel: '23 июня (Основной день Форума)',
+          inputType: 'checkbox',
+          inputChecked: false,
+          inputName: 'dateParticipation',
+          inputValue: '23 июня (Основной день Форума)'
+        })(class="custom-toggle--checkbox")
 
       fieldset
         legend Укажите мероприятия, в которых Вы будете участвовать

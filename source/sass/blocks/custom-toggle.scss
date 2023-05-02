@@ -5,20 +5,10 @@
   font-weight: 300;
 
   display: flex;
-  width: 500px;
-  padding: 14px 0 10px 36px;
-
-  @media screen and (max-width: 767px) {
-    padding: 14px 0 10px 0;
-    width: 100%;
-  }
+  padding: 14px 0;
 
   &:last-of-type {
-    padding: 14px 0 58px 36px;
-
-    @media screen and (max-width: 767px) {
-      padding: 14px 0 58px 0;
-    }
+    padding: 14px 0;
   }
 
   input {
@@ -53,7 +43,7 @@
       width: 28px;
       height: 28px;
 
-      border: 1.5px solid #2c39f2;
+      border: 1.5px solid rgba($color-default-white, 0.2);
 
       transition: border 0.3s ease;
 
@@ -63,10 +53,10 @@
         top: 50%;
         left: 50%;
 
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
 
-        background-color: rgba(#2c39f2, 0);
+        background-color: transparent;
 
         transform: translate(-50%, -50%);
 
@@ -84,7 +74,7 @@
       width: 28px;
       height: 28px;
 
-      border: 1px solid #2c39f2;
+      border: 1px solid rgba($color-default-white, 0.2);
       border-radius: 50%;
 
       transition: border 0.3s ease;
@@ -109,10 +99,10 @@
   }
 
   input:checked + .custom-toggle__icon {
-    border: 1.5px solid #2c39f2;
+    border: 1.5px solid $color-whisper;
 
     &::before {
-      background-color: #2c39f2;
+      background-color: $color-whisper;
     }
   }
 
