@@ -35,8 +35,26 @@ body {
 }
 
 a {
-  color: $color-default-black;
+  font-size: 18px;
+  line-height: 27px;
+  color: $color-light-sea-green;
   text-decoration: none;
+
+  transition: color $trans-default;
+
+  &:hover,
+  &:focus {
+    color: $color-tomato;
+  }
+
+  &:active {
+    color: $color-light-sea-green;
+  }
+
+  @media screen and (max-width: 374px) {
+    font-size: 16px;
+    line-height: 1.2;
+  }
 }
 
 img,

@@ -435,11 +435,16 @@ mixin register()
             isRequired: true
           })(class="register__input")
 
+          +custom-toggle({
+            inputId: 'consentPersonalData',
+            inputLabel: '<a href="#" target="_blank" rel="nofollow noopener noreferrer">Я подтверждаю свое согласие&nbsp; </a>на обработку моих указанных в анкете персональных данных в соответствии со ст. 9 Федерального закона «О персональных данных» от 27.07.2006 г. №152-ФЗ',
+            inputType: 'checkbox',
+            inputChecked: false,
+            inputName: 'consentPersonalData',
+            inputValue: '22 июня (Секции факультетов РАНХиГС)'
+          })(class="custom-toggle--checkbox custom-toggle--checkbox-agree")
 
-        fieldset
-          legend Согласие на обработку персональных данных
-          label
-          | Я подтверждаю свое согласие на обработку моих указанных в&nbsp;
-          a(href="#") анкете персональных данных&nbsp;
-          | соответствии со ст. 9 Федерального закона «О персональных данных» от 27.07.2006 г. №152-ФЗ
-          input(type="checkbox")
+        +btn({
+          text: 'Зарегистрироваться',
+          type: 'submit'
+        })

@@ -1,14 +1,22 @@
 .btn {
   display: inline-flex;
+  justify-content: center;
   padding: 10px 20px;
 
-  color: $color-default-white;
+  font-size: 18px;
+  line-height: 27px;
+  color: $color-light-sea-green;
 
-  background-color: $color-neon-blue;
-  border: none;
+  background-color: transparent;
+  border: 2px solid $color-light-sea-green;
+  border-radius: 5px;
   cursor: pointer;
 
-  transition: opacity $trans-default;
+  transition: background-color $trans-default, color $trans-default;
+
+  @media screen and (max-width: 374px) {
+    font-size: 16px;
+  }
 
   &--red {
     background-color: $color-torch-red;
@@ -21,6 +29,7 @@
   }
 
   @include hover-focus {
-    opacity: 0.8;
+    background-color: rgba($color-light-sea-green, 0.3);
+    color: $color-whisper;
   }
 }

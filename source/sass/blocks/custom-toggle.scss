@@ -8,7 +8,12 @@
   padding: 14px 0;
 
   &:last-of-type {
-    padding: 14px 0;
+    padding: 14px 0 0 0;
+  }
+
+  @media screen and (max-width: 374px) {
+    font-size: 16px;
+    line-height: 1.2;
   }
 
   input {
@@ -64,6 +69,18 @@
 
         transition: background-color 0.3s ease;
       }
+    }
+  }
+
+  &--checkbox-agree {
+    &:last-of-type {
+      padding: 0;
+    }
+
+    .custom-toggle__icon {
+      top: 0;
+      padding: 0;
+      transform: translateY(25%);
     }
   }
 

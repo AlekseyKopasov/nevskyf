@@ -6,6 +6,15 @@
   margin: 0 auto;
   padding: 60px 0;
 
+  @media screen and (max-width: 374px) {
+   padding: 40px 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__headine {
     margin: 0 auto;
     margin-bottom: 30px;
@@ -14,12 +23,33 @@
     line-height: 1.2;
     text-align: center;
     color: $color-light-sea-green;
+
+    @media screen and (max-width: 767px) {
+      font-size: 34px;
+    }
+
+    @media screen and (max-width: 374px) {
+      margin-bottom: 18px;
+      font-size: 28px;
+    }
   }
 
   &__fieldset {
-    margin-bottom: 55px;
+    margin: 0 0 55px 0;
     padding: 0;
     border: 0;
+
+    &:last-of-type {
+      margin-bottom: 25px;
+    }
+
+    @media screen and (max-width: 424px) {
+      margin-bottom: 40px;
+
+      &:last-of-type {
+        margin-bottom: 25px;
+      }
+    }
   }
 
   &__title {
@@ -28,6 +58,15 @@
     font-size: 24px;
     line-height: 1.2;
     color: $color-light-sea-green;
+
+    @media screen and (max-width: 424px) {
+      text-align: center;
+    }
+
+    @media screen and (max-width: 374px) {
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
   }
 
   &__title--hidden {
@@ -40,6 +79,10 @@
 
   &__sections-wrapper:not(:last-of-type) {
     margin-bottom: 35px;
+
+    @media screen and (max-width: 374px) {
+      margin-bottom: 15px;
+    }
   }
 
   &__section {
@@ -56,6 +99,28 @@
     text-align: center;
     color: rgba($color-light-sea-green, 0.6);
     font-weight: 400;
+
+    @media screen and (max-width: 374px) {
+      font-size: 18px;
+      color: $color-light-sea-green;
+    }
+  }
+
+  &__sections-title {
+    position: relative;
+
+    @media screen and (max-width: 374px) {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        height: 1px;
+        transform: translateX(50%);
+        background-color: $color-light-sea-green;
+      }
+    }
   }
 
   &__sections-subtitle {
@@ -66,5 +131,9 @@
     margin: 0 0 20px 0;
     color: $color-tomato;
     font-style: italic;
+
+    @media screen and (max-width: 424px) {
+      text-align: center;
+    }
   }
 }

@@ -10,6 +10,11 @@
     width: 100%;
   }
 
+  @media screen and (max-width: 374px) {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
   &__label {
     display: inline-block;
     margin-bottom: 5px;
@@ -18,8 +23,9 @@
 
     pointer-events: none;
 
-    @media screen and (max-width: 767px) {
-      transform: translateY(calc(-50% - 5px));
+    @media screen and (max-width: 374px) {
+      font-size: 16px;
+      line-height: 1.2;
     }
   }
 
@@ -36,7 +42,7 @@
     pointer-events: none;
 
     @media screen and (max-width: 767px) {
-      transform: translateY(calc(-50% - 5px));
+      transform: translateY(calc(5% - 5px));
     }
   }
 
@@ -72,6 +78,7 @@
     cursor: pointer;
 
     transition: border 0.3s ease;
+
 
     &:hover {
       border: 2px solid rgba(#ffffff, 0.5);
@@ -171,6 +178,11 @@
 
     br {
       display: none;
+    }
+
+    @media screen and (max-width: 374px) {
+      font-size: 16px;
+      line-height: 1.2;
     }
   }
 
