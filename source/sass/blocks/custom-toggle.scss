@@ -37,8 +37,10 @@
   &--checkbox {
     .custom-toggle__icon {
       position: absolute;
-      top: 0;
+      top: 50%;
       left: 0;
+
+      transform: translateY(-50%);
 
       width: 28px;
       height: 28px;
@@ -53,8 +55,8 @@
         top: 50%;
         left: 50%;
 
-        width: 16px;
-        height: 16px;
+        width: 10px;
+        height: 10px;
 
         background-color: transparent;
 
@@ -85,8 +87,8 @@
         top: 50%;
         left: 50%;
 
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
 
         color: rgba(255, 255, 255, 0);
 
