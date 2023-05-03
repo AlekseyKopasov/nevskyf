@@ -101,16 +101,16 @@
     }
   }
 
+  &__sections-wrapper.is-hidden {
+    display: none;
+  }
+
   &__section {
     margin-bottom: 20px;
   }
 
   &__sections {
     margin-bottom: 20px;
-  }
-
-  &__sections.is-hidden {
-    display: none;
   }
 
   &__sections b {

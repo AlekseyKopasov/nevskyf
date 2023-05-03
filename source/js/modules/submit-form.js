@@ -8,7 +8,8 @@ const submitForm = () => {
   const submitHandler = (evt) => {
     evt.preventDefault();
 
-
+    const formData = new FormData(evt.target);
+    // console.log(...formData);
   };
 
   form.addEventListener('submit', submitHandler);

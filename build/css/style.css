@@ -685,14 +685,14 @@ button,
     margin-bottom: 15px;
   }
 }
+.register__sections-wrapper.is-hidden {
+  display: none;
+}
 .register__section {
   margin-bottom: 20px;
 }
 .register__sections {
   margin-bottom: 20px;
-}
-.register__sections.is-hidden {
-  display: none;
 }
 .register__sections b {
   color: rgba(255, 255, 255, 0.5);

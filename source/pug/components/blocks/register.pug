@@ -277,7 +277,7 @@ mixin register()
             inputId: 'yourOwnVersion',
             inputName: 'yourOwnVersion',
             inputPlaceholder: 'Представьтесь',
-            isRequired: true
+            isRequired: true,
           })(class="register__input is-hidden",
             data-validate-type="text",
             data-required,
@@ -369,8 +369,8 @@ mixin register()
         fieldset.register__fieldset(data-sections="panel")
           legend.register__title Укажите мероприятия, в&nbsp;которых&nbsp;Вы будете участвовать
 
-          .register__sections-wrapper(data-validate-type="toggle-group")
-            .register__sections(data-sections-tab="internationalConference")
+          .register__sections-wrapper(data-validate-type="toggle-group", data-sections-tab="internationalConference")
+            .register__sections
               h2.register__sections-title 21 июня:
               p.register__error-title-wrap
                 span.register__error-text
@@ -383,8 +383,8 @@ mixin register()
                 inputValue: 'Международная конференция, посвященная вопросам интернационализации вузов'
             })(class="custom-toggle--checkbox", data-required)
 
-          .register__sections-wrapper(data-validate-type="toggle-group")
-            .register__sections.is-hidden(data-sections-tab="ranepaFaculties")
+          .register__sections-wrapper.is-hidden(data-validate-type="toggle-group", data-sections-tab="ranepaFaculties")
+            .register__sections
               h2.register__sections-title 22 июня:
               p.register__error-title-wrap
                 span.register__error-text
@@ -399,8 +399,8 @@ mixin register()
                   inputValue: item.value
                 })(class="custom-toggle--checkbox", data-required)
 
-          .register__sections-wrapper
-            .register__sections.is-hidden(data-sections-tab="mainDay")
+          .register__sections-wrapper.is-hidden(data-sections-tab="mainDay")
+            .register__section
               h2.register__sections-title 23 июня:
               .register__section
                 h3.register__sections-subtitle Дневная сессия
@@ -459,7 +459,7 @@ mixin register()
             inputId: 'birthday',
             inputName: 'birthday',
             isRequired: true,
-            inputData: 'date',
+            inputDataDate: 'date',
             inputMinLength: 10,
           })(class="register__input",
             data-required,

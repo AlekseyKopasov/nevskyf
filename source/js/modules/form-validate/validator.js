@@ -210,7 +210,7 @@ export class Validator {
 
   _removeGroupAria(inputs) {
     inputs.forEach((input) => {
-      //   console.log(input);
+
       if (!input.checked) {
         input.removeAttribute('aria-required');
         input.removeAttribute('aria-invalid');
@@ -239,56 +239,15 @@ export class Validator {
         this._setItemInvalidState(input.parentElement.parentElement, input);
         title.textContent = 'Выберите дату';
         this._removeGroupAria(formElements);
+        flag = false;
       });
     } else {
       formElements.forEach((input) => {
         this._setItemValidState(input.parentElement.parentElement, input);
         title.textContent = '';
         this._setGroupAria(formElements);
+        flag = true;
       });
-      flag = false;
-    }
-    return flag;
-  }
-
-  _customExample(parent, input) {
-    let flag = true;
-    if (!input.value.length) {
-      parent.dataset.messageBase = 'Поле обязательно к заполнению';
-      this._setItemInvalidState(parent, input);
-      flag = false;
-    } else if (input.value.length < input.minLength) {
-      parent.dataset.messageBase = `Осталось ввести ещё ${input.minLength - input.value.length} символов`;
-      this._setItemInvalidState(parent, input);
-      flag = false;
-    } else if (input.value.length > input.minLength) {
-      parent.dataset.messageBase = `Вы ввели ${input.value.length - input.minLength} лишних символов`;
-      this._setItemInvalidState(parent, input);
-      flag = false;
-    } else {
-      parent.dataset.messageSuccess = 'Поле заполнено корректно';
-      this._setItemValidState(parent, input);
-      flag = true;
-    }
-    return flag;
-  }
-
-  _validateFile(parent, input) {
-    let flag = true;
-    const sizeTest = parent.dataset.maxSize && input.files[0] ? input.files[0].size < +parent.dataset.maxSize : true;
-    if (input.value && sizeTest) {
-      this._setItemValidState(parent, input);
-    } else {
-      this._setItemInvalidState(parent, input);
-      flag = false;
-    }
-    return flag;
-  }
-
-  _customUpload(parent, input) {
-    let flag = true;
-    if (parent.classList.contains('is-invalid') || !input.files[0]) {
-      flag = false;
     }
     return flag;
   }
@@ -299,8 +258,6 @@ export class Validator {
         return this._validateTextInput(parent, input);
       case 'number':
         return this._validateNumberInput(parent, input);
-      case 'matrix':
-        return this._validateMatrixInput(parent, input);
       case 'email':
         return this._validateEmailInput(parent, input);
       case 'phone':
@@ -311,14 +268,9 @@ export class Validator {
         return this._validateSelect(parent, input);
       case 'toggle-group':
         return this._validateToggleGroup(parent, input);
-      case 'file':
-        return this._validateFile(parent, input);
-      case 'custom-upload':
-        return this._customUpload(parent, input);
-      case 'custom-example':
-        return this._customExample(parent, input);
       default:
         return false;
+
     }
   }
 
@@ -360,9 +312,10 @@ export class Validator {
 
     if (!parent.hasAttribute('data-required')) {
       const removeElement = parent.querySelector('input') || parent.querySelector('select') || parent.querySelector('textarea');
+      parent.classList.remove('is-invalid');
 
       if (!removeElement.value) {
-        parent.classList.remove('is-valid');
+        parent.classList.add('is-valid');
         parent.classList.remove('is-invalid');
       }
     }
@@ -377,7 +330,13 @@ export class Validator {
       this._matrixLimitation(formElement, parent.dataset.matrix, this._getMatrixLimitationsRegEx(parent.dataset.matrixLimitation));
     }
 
-    const isValid = this._validateInput(parent.dataset.validateType, parent, formElement);
+    let isValid = true;
+    let isHidden = parent.classList.contains('is-hidden')
+      || parent.parentElement.classList.contains('is-hidden')
+
+      if (!isHidden) {
+      isValid = this._validateInput(parent.dataset.validateType, parent, formElement);
+    }
 
     if (onInputValidate || fullValidate) {
       this._renderMessage(isValid, parent, formElement);
@@ -389,6 +348,7 @@ export class Validator {
     items.forEach((item) => {
       const formElement = item.querySelector('input') || item.querySelector('select') || item.querySelector('textarea');
       this.validateFormElement(formElement, true);
+
       if (item.classList.contains('is-invalid')) {
         isValid = false;
       }
@@ -404,6 +364,7 @@ export class Validator {
     const validateItems = event.target.querySelectorAll('[data-validate-type]');
     const result = this._fullValidate(validateItems);
     this._createStates(event.target);
+    console.log(result);
     return result;
   }
 

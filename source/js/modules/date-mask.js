@@ -1,7 +1,7 @@
 // import iMask from '../vendor/IMask';
 
 function addDateMask() {
-  const dates = document.querySelectorAll('input[data="date"]');
+  const dates = document.querySelectorAll('input[data-date="date"]');
 
   /* eslint-disable */
   if (dates) {

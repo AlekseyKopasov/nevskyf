@@ -11,17 +11,21 @@ const inputOwnVersion = () => {
     const input = document.querySelector('[data-input="person"]');
     const inputField = input.querySelector('input');
     const ownText = 'Другое (указать)';
+    input.classList.add(HIDDEN_CLASS);
+
+    if (text.textContent !== ownText) {
+      inputField.focus();
+      inputField.parentElement.classList.add('is-valid');
+      inputField.parentElement.classList.remove('is-invalid');
+    }
 
     if (text.textContent === ownText && input) {
       input.classList.remove(HIDDEN_CLASS);
       inputField.focus();
-    } else {
-      input.classList.add(HIDDEN_CLASS);
     }
   };
 
   person.addEventListener('click', clickHandler);
-
 };
 
 export {inputOwnVersion};

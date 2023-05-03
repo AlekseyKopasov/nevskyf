@@ -29,6 +29,10 @@ const toggleSections = () => {
   const clickHandler = () => {
     const title = document.querySelector('[data-sections="panel"] .register__title');
 
+    if (!title) {
+      return;
+    }
+
     setTimeout(() => {
       const allEmptyCheckboxes = dateTabs.querySelector('.custom-toggle--checkbox.is-valid');
       if (allEmptyCheckboxes) {

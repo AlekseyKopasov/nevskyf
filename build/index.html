@@ -181,8 +181,8 @@
               </fieldset>
               <fieldset class="register__fieldset" data-sections="panel">
                 <legend class="register__title">Укажите мероприятия, в&nbsp;которых&nbsp;Вы будете участвовать</legend>
-                <div class="register__sections-wrapper" data-validate-type="toggle-group">
-                  <div class="register__sections" data-sections-tab="internationalConference">
+                <div class="register__sections-wrapper" data-validate-type="toggle-group" data-sections-tab="internationalConference">
+                  <div class="register__sections">
                     <h2 class="register__sections-title">21 июня:</h2>
                     <p class="register__error-title-wrap"><span class="register__error-text"></span></p>
                     <div class="custom-toggle custom-toggle--checkbox" data-required>
@@ -192,8 +192,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="register__sections-wrapper" data-validate-type="toggle-group">
-                  <div class="register__sections is-hidden" data-sections-tab="ranepaFaculties">
+                <div class="register__sections-wrapper is-hidden" data-validate-type="toggle-group" data-sections-tab="ranepaFaculties">
+                  <div class="register__sections">
                     <h2 class="register__sections-title">22 июня:</h2>
                     <p class="register__error-title-wrap"><span class="register__error-text"></span></p>
                     <div class="custom-toggle custom-toggle--checkbox" data-required>
@@ -258,8 +258,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="register__sections-wrapper">
-                  <div class="register__sections is-hidden" data-sections-tab="mainDay">
+                <div class="register__sections-wrapper is-hidden" data-sections-tab="mainDay">
+                  <div class="register__section">
                     <h2 class="register__sections-title">23 июня:</h2>
                     <div class="register__section">
                       <h3 class="register__sections-subtitle">Дневная сессия</h3>
@@ -325,7 +325,7 @@
                 </div>
                 <div class="input register__input" data-required data-validate-type="text">
                   <label><span class="input__label">Дата рождения</span>
-                    <input type="text" id="birthday" name="birthday" minlength="10" data="date" required>
+                    <input type="text" id="birthday" name="birthday" minlength="10" data-date="date" required>
                   </label>
                 </div>
                 <div class="input register__input" data-required data-validate-type="text">
