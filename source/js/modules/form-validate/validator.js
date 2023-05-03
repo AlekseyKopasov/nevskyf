@@ -334,7 +334,7 @@ export class Validator {
     let isHidden = parent.classList.contains('is-hidden')
       || parent.parentElement.classList.contains('is-hidden')
 
-      if (!isHidden) {
+    if (!isHidden) {
       isValid = this._validateInput(parent.dataset.validateType, parent, formElement);
     }
 
@@ -364,7 +364,9 @@ export class Validator {
     const validateItems = event.target.querySelectorAll('[data-validate-type]');
     const result = this._fullValidate(validateItems);
     this._createStates(event.target);
-    console.log(result);
+
+    // const formData = new FormData(event.target);
+    // console.log(...formData);
     return result;
   }
 
