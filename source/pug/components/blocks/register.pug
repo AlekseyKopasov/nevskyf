@@ -270,7 +270,7 @@ mixin register()
           })(class="custom-select",
             data-validate-type="select",
             data-required,
-            data-select=''
+            data-select='person'
             )
 
           +custom-input({
@@ -278,9 +278,10 @@ mixin register()
             inputName: 'yourOwnVersion',
             inputPlaceholder: 'Представьтесь',
             isRequired: true
-          })(class="register__input",
+          })(class="register__input is-hidden",
             data-validate-type="text",
-            data-required
+            data-required,
+            data-input='person'
             )
 
           +custom-input({

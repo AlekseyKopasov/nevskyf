@@ -5,6 +5,7 @@ import {CustomSelect} from './modules/select/custom-select';
 import {submitForm} from './modules/submit-form';
 import {addDateMask} from './modules/date-mask';
 import {toggleSections} from './modules/toggle-sections';
+import {inputOwnVersion} from './modules/input-own-version.js';
 
 // ---------------------------------
 
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     submitForm();
     addDateMask();
     toggleSections();
+    inputOwnVersion();
 
     const select = new CustomSelect();
     select.init();

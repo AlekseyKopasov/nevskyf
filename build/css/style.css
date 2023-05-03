@@ -668,6 +668,9 @@ button,
 .register__title--hidden {
   display: none;
 }
+.register__input.is-hidden {
+  display: none;
+}
 .register__input:not(:last-of-type) {
   margin-bottom: 24px;
 }
