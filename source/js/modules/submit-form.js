@@ -28,18 +28,23 @@ const submitForm = () => {
           }
         });
 
-        fetch('./.php', {
+        fetch('form-mailer.php', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
           },
-          body: formData,
+          body: JSON.stringify(...formData),
         })
             .then(((res) => {
               if (res.status === '200') {
                 console.log('Показывать модальное окно');
                 console.log('Очищать форму');
               }
+
+              if (res.status === '404') {
+                console.log(123);
+              }
+
             }))
             .catch();
       }
