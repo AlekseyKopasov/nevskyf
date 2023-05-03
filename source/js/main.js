@@ -3,6 +3,7 @@ import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {submitForm} from './modules/submit-form';
+import {addDateMask} from './modules/date-mask';
 
 // ---------------------------------
 
@@ -21,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initModals();
     submitForm();
+    addDateMask();
 
     const select = new CustomSelect();
     select.init();

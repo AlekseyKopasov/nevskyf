@@ -734,6 +734,14 @@ button,
   left: 0;
 }
 
+.header {
+  display: none;
+}
+
+.footer {
+  display: none;
+}
+
 .modal {
   position: fixed;
   top: 0;

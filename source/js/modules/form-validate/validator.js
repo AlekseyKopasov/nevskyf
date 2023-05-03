@@ -69,6 +69,7 @@ export class Validator {
       return;
     }
     parent.classList.remove('is-valid');
+    parent.classList.add('is-invalid');
     input.setAttribute('aria-invalid', 'true');
   }
 
@@ -80,12 +81,39 @@ export class Validator {
     this._matrixReplace(item, matrix, limitation);
   }
 
-  _validateTextInput(parent, input) {
+  _validateNumberInput(parent, input) {
     let flag = true;
+    let maxlength = +input.getAttribute('maxlength');
+
     if (!input.value) {
       parent.dataset.messageBase = 'Поле обязательно к заполнению';
       this._setItemInvalidState(parent, input);
       flag = false;
+    } else if (input.value.length > maxlength) {
+      input.value = input.value.slice(0, maxlength);
+    } else if (input.value.length < maxlength) {
+      parent.dataset.messageBase = 'Поле обязательно к заполнению';
+      this._setItemInvalidState(parent, input);
+      flag = false;
+    } else {
+      parent.dataset.messageSuccess = '';
+      this._setItemValidState(parent, input);
+      flag = true;
+    }
+    return flag;
+  }
+
+  _validateTextInput(parent, input) {
+    let flag = true;
+    let minlength = +input.getAttribute('minlength');
+
+    if (!input.value) {
+      parent.dataset.messageBase = 'Поле обязательно к заполнению';
+      this._setItemInvalidState(parent, input);
+      flag = false;
+    } else if (input.value.length < minlength) {
+      parent.dataset.messageBase = 'Поле обязательно к заполнению';
+      this._setItemInvalidState(parent, input);
     } else {
       parent.dataset.messageSuccess = '';
       this._setItemValidState(parent, input);
@@ -171,10 +199,10 @@ export class Validator {
   }
 
   _returnCheckedElements(inputs) {
-    let flag = false;
+    let flag = true;
     inputs.forEach((input) => {
       if (input.checked) {
-        flag = true;
+        flag = false;
       }
     });
     return flag;
@@ -182,6 +210,7 @@ export class Validator {
 
   _removeGroupAria(inputs) {
     inputs.forEach((input) => {
+      //   console.log(input);
       if (!input.checked) {
         input.removeAttribute('aria-required');
         input.removeAttribute('aria-invalid');
@@ -201,23 +230,21 @@ export class Validator {
 
   _validateToggleGroup(parent) {
     const formElements = parent.querySelectorAll('input');
-    const title = parent.parentElement.querySelector('.register__error-text');
-    let flag = true;
-    if (this._returnCheckedElements(formElements)) {
-      this._removeGroupAria(formElements);
-      formElements.forEach((checkbox) => {
-        checkbox.parentElement.parentElement.classList.remove('is-invalid');
-        checkbox.parentElement.parentElement.classList.add('is-valid');
-      });
 
-      title.textContent = '';
+    const title = parent.querySelector('.register__error-text');
+    let flag = true;
+
+    if (this._returnCheckedElements(formElements)) {
+      formElements.forEach((input) => {
+        this._setItemInvalidState(input.parentElement.parentElement, input);
+        title.textContent = 'Выберите дату';
+        this._removeGroupAria(formElements);
+      });
     } else {
-      this._setGroupAria(formElements);
-      this._message.removeMessage(parent);
-      title.textContent = 'Выберите дату';
-      formElements.forEach((checkbox) => {
-        checkbox.parentElement.parentElement.classList.add('is-invalid');
-        checkbox.parentElement.parentElement.classList.remove('is-valid');
+      formElements.forEach((input) => {
+        this._setItemValidState(input.parentElement.parentElement, input);
+        title.textContent = '';
+        this._setGroupAria(formElements);
       });
       flag = false;
     }
@@ -270,6 +297,8 @@ export class Validator {
     switch (type) {
       case 'text':
         return this._validateTextInput(parent, input);
+      case 'number':
+        return this._validateNumberInput(parent, input);
       case 'matrix':
         return this._validateMatrixInput(parent, input);
       case 'email':
