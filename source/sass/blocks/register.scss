@@ -43,6 +43,10 @@
       margin-bottom: 25px;
     }
 
+    &.is-hidden {
+      display: none;
+    }
+
     @media screen and (max-width: 424px) {
       margin-bottom: 40px;
 
@@ -58,6 +62,10 @@
     font-size: 24px;
     line-height: 1.2;
     color: $color-light-sea-green;
+
+    &.is-hidden {
+      display: none;
+    }
 
     @media screen and (max-width: 424px) {
       text-align: center;
@@ -91,6 +99,14 @@
 
   &__section {
     margin-bottom: 20px;
+  }
+
+  &__sections {
+    margin-bottom: 20px;
+  }
+
+  &__sections.is-hidden {
+    display: none;
   }
 
   &__sections b {

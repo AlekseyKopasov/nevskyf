@@ -4,6 +4,7 @@ import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {submitForm} from './modules/submit-form';
 import {addDateMask} from './modules/date-mask';
+import {toggleSections} from './modules/toggle-sections';
 
 // ---------------------------------
 
@@ -23,6 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initModals();
     submitForm();
     addDateMask();
+    toggleSections();
 
     const select = new CustomSelect();
     select.init();

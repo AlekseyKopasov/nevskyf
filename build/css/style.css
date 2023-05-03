@@ -634,6 +634,9 @@ button,
 .register__fieldset:last-of-type {
   margin-bottom: 25px;
 }
+.register__fieldset.is-hidden {
+  display: none;
+}
 @media screen and (max-width: 424px) {
   .register__fieldset {
     margin-bottom: 40px;
@@ -647,6 +650,9 @@ button,
   font-size: 24px;
   line-height: 1.2;
   color: #1abc9c;
+}
+.register__title.is-hidden {
+  display: none;
 }
 @media screen and (max-width: 424px) {
   .register__title {
@@ -678,6 +684,12 @@ button,
 }
 .register__section {
   margin-bottom: 20px;
+}
+.register__sections {
+  margin-bottom: 20px;
+}
+.register__sections.is-hidden {
+  display: none;
 }
 .register__sections b {
   color: rgba(255, 255, 255, 0.5);

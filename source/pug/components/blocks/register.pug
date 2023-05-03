@@ -333,7 +333,7 @@ mixin register()
             data-required
             )
 
-        fieldset.register__fieldset(data-validate-type="toggle-group")
+        fieldset.register__fieldset(data-validate-type="toggle-group", data-tabs="sections-tabs")
           legend.register__title Выберите дату участия
           p.register__error-title-wrap
             span.register__error-text
@@ -365,7 +365,7 @@ mixin register()
             inputValue: '23 июня (Основной день Форума)'
           })(class="custom-toggle--checkbox", data-required)
 
-        fieldset.register__fieldset
+        fieldset.register__fieldset(data-sections="panel")
           legend.register__title Укажите мероприятия, в&nbsp;которых&nbsp;Вы будете участвовать
 
           .register__sections-wrapper(data-validate-type="toggle-group")
@@ -383,7 +383,7 @@ mixin register()
             })(class="custom-toggle--checkbox", data-required)
 
           .register__sections-wrapper(data-validate-type="toggle-group")
-            .register__sections(data-sections-tab="ranepaFaculties")
+            .register__sections.is-hidden(data-sections-tab="ranepaFaculties")
               h2.register__sections-title 22 июня:
               p.register__error-title-wrap
                 span.register__error-text
@@ -399,7 +399,7 @@ mixin register()
                 })(class="custom-toggle--checkbox", data-required)
 
           .register__sections-wrapper
-            .register__sections(data-sections-tab="mainDay")
+            .register__sections.is-hidden(data-sections-tab="mainDay")
               h2.register__sections-title 23 июня:
               .register__section
                 h3.register__sections-subtitle Дневная сессия
@@ -425,7 +425,7 @@ mixin register()
                       inputName: item.name,
                       inputValue: item.value
                     })(class= item.extra)
-        fieldset.register__fieldset
+        fieldset.register__fieldset.is-hidden(data-sections-tab="mainDay")
           legend.register__title Паспортные данные
           p.register__text-alert Пропускной режим в&nbsp;Президентскую библиотеку требует предъявления оригинала документа, удостоверяющего личность (паспорт гражданина&nbsp;РФ или гражданина иностранного государства). Просим заполнить следующую информацию
 

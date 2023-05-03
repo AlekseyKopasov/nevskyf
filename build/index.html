@@ -160,7 +160,7 @@
                   </label>
                 </div>
               </fieldset>
-              <fieldset class="register__fieldset" data-validate-type="toggle-group">
+              <fieldset class="register__fieldset" data-validate-type="toggle-group" data-tabs="sections-tabs">
                 <legend class="register__title">Выберите дату участия</legend>
                 <p class="register__error-title-wrap"><span class="register__error-text"></span></p>
                 <div class="custom-toggle custom-toggle--checkbox" data-required>
@@ -179,7 +179,7 @@
                   </label>
                 </div>
               </fieldset>
-              <fieldset class="register__fieldset">
+              <fieldset class="register__fieldset" data-sections="panel">
                 <legend class="register__title">Укажите мероприятия, в&nbsp;которых&nbsp;Вы будете участвовать</legend>
                 <div class="register__sections-wrapper" data-validate-type="toggle-group">
                   <div class="register__sections" data-sections-tab="internationalConference">
@@ -193,7 +193,7 @@
                   </div>
                 </div>
                 <div class="register__sections-wrapper" data-validate-type="toggle-group">
-                  <div class="register__sections" data-sections-tab="ranepaFaculties">
+                  <div class="register__sections is-hidden" data-sections-tab="ranepaFaculties">
                     <h2 class="register__sections-title">22 июня:</h2>
                     <p class="register__error-title-wrap"><span class="register__error-text"></span></p>
                     <div class="custom-toggle custom-toggle--checkbox" data-required>
@@ -259,7 +259,7 @@
                   </div>
                 </div>
                 <div class="register__sections-wrapper">
-                  <div class="register__sections" data-sections-tab="mainDay">
+                  <div class="register__sections is-hidden" data-sections-tab="mainDay">
                     <h2 class="register__sections-title">23 июня:</h2>
                     <div class="register__section">
                       <h3 class="register__sections-subtitle">Дневная сессия</h3>
@@ -310,7 +310,7 @@
                   </div>
                 </div>
               </fieldset>
-              <fieldset class="register__fieldset">
+              <fieldset class="register__fieldset is-hidden" data-sections-tab="mainDay">
                 <legend class="register__title">Паспортные данные</legend>
                 <p class="register__text-alert">Пропускной режим в&nbsp;Президентскую библиотеку требует предъявления оригинала документа, удостоверяющего личность (паспорт гражданина&nbsp;РФ или гражданина иностранного государства). Просим заполнить следующую информацию</p>
                 <div class="input register__input" data-required data-validate-type="number">
