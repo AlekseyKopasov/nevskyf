@@ -1,10 +1,11 @@
 const singleCheckbox = () => {
   const checkboxes = document.querySelectorAll('.custom-toggle--single');
 
-  if (!checkboxes) {
+  if (!checkboxes.length) {
     return;
   }
 
+  // TODO fix error
   const parent = checkboxes[0].parentElement.parentElement;
 
   const toggleCheckboxes = (inputs, target) => {

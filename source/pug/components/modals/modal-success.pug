@@ -1,4 +1,7 @@
 mixin modal-success()
-  p.modal__description Размер этой модалки зависит от ширины контента,
-    br
-    | отключена анимация-скейл
+  p.modal__description Вы успешно зарегистрировались.
+
+  +btn({
+    text: 'Закрыть',
+    type: 'button'
+  })

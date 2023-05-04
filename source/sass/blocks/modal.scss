@@ -11,7 +11,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  background-color: rgba($color-default-black, 0.8);
+  background-color: rgba($color-midnight-express, 0.8);
   transform: scale(1.2);
   visibility: hidden;
   opacity: 0;
@@ -62,11 +62,16 @@
     width: 600px;
     padding: 40px;
 
+    font-size: 18px;
+    line-height: 1.2;
+
+    border-radius: 5px;
     background-color: $color-default-white;
+    color: $color-midnight-express;
 
     @include vp-767 {
       width: 100%;
-      padding: 20px;
+      // padding: 20px;
     }
   }
 
@@ -83,6 +88,17 @@
     background: $color-transparent;
     border: none;
     cursor: pointer;
+
+    transition: opacity $trans-default;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 1;
+    }
   }
 
   &--responsive {
@@ -115,5 +131,40 @@
     opacity: 1;
 
     pointer-events: auto;
+  }
+
+  &.js-success .modal__description {
+    text-align: center;
+  }
+
+  &.js-success .modal__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &.js-success .btn {
+    width: 250px;
+    margin: 0 auto;
+
+    transition:
+      opacity $trans-default,
+      color $trans-default,
+      border-color $trans-default,
+      background-color $trans-default;
+
+    &:hover,
+    &:focus {
+      color: $color-midnight-express;
+      border-color: $color-midnight-express;
+      background-color: rgba($color-midnight-express, 0.2);
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  &.js-error-modal .modal__description {
+    color: $color-torch-red;
   }
 }

@@ -88,7 +88,6 @@ export class Modals {
     if (!this._modalName) {
       return;
     }
-
     this.open();
   }
 
@@ -97,6 +96,7 @@ export class Modals {
 
     if (isEscKey) {
       evt.preventDefault();
+
       this.close(document.querySelector('.modal.is-active').dataset.modal);
     }
   }

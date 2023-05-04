@@ -15,4 +15,8 @@ block variables
 block main
   main
     +register(regions)
+    +modal('js-success')(data-modal="success", data-open-modal)
+      +modal-success('success')
+    +modal('js-error-modal')(data-modal="error", data-open-modal)
+      +modal-error('error')
 block modals

@@ -319,14 +319,14 @@ template {
   font-weight: 400;
   font-family: "Lato";
   font-display: swap;
-  src: url("../../fonts/Lato-Regular.woff2") format("woff2"), url("../../fonts/Lato-Regular.woff") format("woff"), url("../../fonts/Lato-Regular.ttf") format("ttf");
+  src: url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff"), url("../fonts/Lato-Regular.ttf") format("ttf");
 }
 @font-face {
   font-style: normal;
   font-weight: 800;
   font-family: "Lato";
   font-display: swap;
-  src: url("../../fonts/Lato-Bold.woff2") format("woff2"), url("../../fonts/Lato-Bold.woff") format("woff"), url("../../fonts/Lato-Bold.ttf") format("ttf");
+  src: url("../fonts/Lato-Bold.woff2") format("woff2"), url("../fonts/Lato-Bold.woff") format("woff"), url("../fonts/Lato-Bold.ttf") format("ttf");
 }
 *,
 *::before,
@@ -773,7 +773,7 @@ button,
           flex-direction: column;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(4, 11, 61, 0.8);
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
@@ -825,12 +825,15 @@ button,
   position: relative;
   width: 600px;
   padding: 40px;
+  font-size: 18px;
+  line-height: 1.2;
+  border-radius: 5px;
   background-color: #ffffff;
+  color: #040b3d;
 }
 @media (max-width: 767px) {
   .modal__content {
     width: 100%;
-    padding: 20px;
   }
 }
 .modal__close-btn {
@@ -844,6 +847,15 @@ button,
   background: rgba(255, 255, 255, 0);
   border: none;
   cursor: pointer;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.modal__close-btn:hover, .modal__close-btn:focus {
+  opacity: 0.6;
+}
+.modal__close-btn:active {
+  opacity: 1;
 }
 .modal--responsive .modal__content {
   width: 100%;
@@ -873,6 +885,36 @@ button,
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+}
+.modal.js-success .modal__description {
+  text-align: center;
+}
+.modal.js-success .modal__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.modal.js-success .btn {
+  width: 250px;
+  margin: 0 auto;
+  -webkit-transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  -o-transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+.modal.js-success .btn:hover, .modal.js-success .btn:focus {
+  color: #040b3d;
+  border-color: #040b3d;
+  background-color: rgba(4, 11, 61, 0.2);
+}
+.modal.js-success .btn:active {
+  opacity: 0.6;
+}
+.modal.js-error-modal .modal__description {
+  color: #ff1553;
 }
 
 .btn {
