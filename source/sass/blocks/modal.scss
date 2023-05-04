@@ -71,7 +71,6 @@
 
     @include vp-767 {
       width: 100%;
-      // padding: 20px;
     }
   }
 
@@ -166,5 +165,6 @@
 
   &.js-error-modal .modal__description {
     color: $color-torch-red;
+    text-align: center;
   }
 }

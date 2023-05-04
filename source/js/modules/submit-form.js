@@ -11,8 +11,9 @@ const submitForm = () => {
   };
 
   const responseCodes = {
-    sucess: 0,
-    exist: 1
+    success: 0,
+    exist: 1,
+    unknown: 2
   };
 
   if (!form) {
@@ -24,7 +25,7 @@ const submitForm = () => {
       return;
     }
 
-    succsuccessModaless.classList.add('is-active');
+    modals.open('success');
   }
 
   const showErrorModal = (text = errorsMsgSet.default) => {
@@ -39,39 +40,56 @@ const submitForm = () => {
 
   const submitHandler = (evt) => {
     evt.preventDefault();
-
     const fetchData = async (data) => {
+      const formData = {};
+
+      for (let d of data) {
+        formData[d[0]] = d[1];
+      }
+
       await fetch(URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
         },
-        body: JSON.stringify(...data),
+        body: JSON.stringify(formData),
       })
-          .then(((res) => {
-            if (res.status === 200) {
-              console.log('Показывать модальное окно');
-              showSuccesModal();
-              console.log('Очищать форму');
-              evt.target.reset()
-              console.log('Редирект обратно на форум');
-              window.location.href = NEVSKY_FORUM_PAGE;
-            }
+      .then(response => response.text())
+      .then((text) => {
+        if (text == responseCodes.success) {
+          console.log('Показывать модальное окно');
+          showSuccesModal();
+          console.log('Очищать форму');
+          evt.target.reset();
+          console.log('Редирект обратно на форум');
+          console.log('Код ответа ---- ', text)
+          // к редиректу добавить таймаут
+          // window.location.href = NEVSKY_FORUM_PAGE;
+        }
 
-            if (res.responseCodes === responseCodes.exist) {
-              console.log('Такой пользователь уже зарегистрировался');
-              showErrorModal(errorsMsgSet.exists);
-            }
+        if (text == responseCodes.exist) {
+          console.log('Такой пользователь уже зарегистрировался');
+          console.log('Код ответа ---- ', text)
+          showErrorModal(errorsMsgSet.exists);
+        }
 
-          }))
-          .catch(() => {
+        if (text == responseCodes.unknown) {
+          console.log('Необработанная ошибка');
+          console.log('Код ответа ---- ', text)
+          showErrorModal(errorsMsgSet.default);
+          console.log('Очищать форму');
+          evt.target.reset();
+        }
+      })
+          .catch((text) => {
             console.log('Необработанная ошибка');
+            console.log('Код ответа ---- ', text)
             showErrorModal(errorsMsgSet.default);
           });
     };
 
     setTimeout(() => {
-      if (window.form._validState) { // TODO fix error
+      if (window.form._validState) {
         const inputs = form.querySelectorAll('input');
 
         const formData = new FormData();
@@ -88,8 +106,8 @@ const submitForm = () => {
           if (checkbox && isChecked) {
             formData.append(name, value);
           }
-          fetchData(formData);
         });
+        fetchData(formData);
       }
     }, 0);
   };

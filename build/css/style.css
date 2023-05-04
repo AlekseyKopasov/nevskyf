@@ -915,6 +915,7 @@ button,
 }
 .modal.js-error-modal .modal__description {
   color: #ff1553;
+  text-align: center;
 }
 
 .btn {

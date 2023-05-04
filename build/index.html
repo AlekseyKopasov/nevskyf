@@ -31,6 +31,11 @@
                     <input type="text" id="lastname" name="lastname" required>
                   </label>
                 </div>
+                <div class="input register__input register__input--uppercase" data-validate-type="text" data-required>
+                  <label><span class="input__label">Имя</span>
+                    <input type="text" id="name" name="name" required>
+                  </label>
+                </div>
               </fieldset>
               <button class="btn" type="submit">Зарегистрироваться</button>
             </form>
@@ -41,7 +46,7 @@
             <div class="modal__overlay" data-close-modal></div>
             <div class="modal__content">
               <p class="modal__description">Вы успешно зарегистрировались.</p>
-              <button class="btn" type="button">Закрыть</button>
+              <button class="btn" type="button" aria-label="Закрыть попап" data-close-modal>Закрыть</button>
               <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
                 <svg width="15" height="15" aria-hidden="true">
                   <use xlink:href="#icon-close"></use>
