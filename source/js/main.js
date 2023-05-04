@@ -6,6 +6,7 @@ import {submitForm} from './modules/submit-form';
 import {addDateMask} from './modules/date-mask';
 import {toggleSections} from './modules/toggle-sections';
 import {inputOwnVersion} from './modules/input-own-version.js';
+import {singleCheckbox} from './modules/single-checkbox';
 
 // ---------------------------------
 
@@ -27,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     addDateMask();
     toggleSections();
     inputOwnVersion();
+    singleCheckbox();
 
     const select = new CustomSelect();
     select.init();

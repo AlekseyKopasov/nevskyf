@@ -1150,6 +1150,10 @@ button,
       -ms-transform: translateY(25%);
           transform: translateY(25%);
 }
+.custom-toggle label.disabled {
+  opacity: 0.3;
+  cursor: initial;
+}
 .custom-toggle--radio .custom-toggle__icon {
   position: absolute;
   top: 0;

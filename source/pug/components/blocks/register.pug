@@ -156,81 +156,81 @@ mixin register()
       {
         id: 'mainDay_sect',
         label: '<b>Секция 1 — </b> Цифровизация кадрового обеспечения государственной службы',
-        type: 'radio',
-        isChecked: true,
-        name: 'sections-mainDay',
+        type: 'checkbox',
+        isChecked: false,
+        name: 'sections-mainDay_day',
         value: 'Секция 1 — Цифровизация кадрового обеспечения государственной службы',
-        extra: 'custom-toggle--radio'
+        extra: 'custom-toggle--checkbox custom-toggle--single'
       },
       {
         id: 'mainDay_sect',
         label: '<b>Секция 2 — </b> Таможня и&nbsp;внешняя торговля: ломаем преграды',
-        type: 'radio',
+        type: 'checkbox',
         isChecked: false,
-        name: 'sections-mainDay',
+        name: 'sections-mainDay_day',
         value: 'Секция 2 — Таможня и&nbsp;внешняя торговля: ломаем преграды',
-        extra: 'custom-toggle--radio'
+        extra: 'custom-toggle--checkbox custom-toggle--single'
       },
       {
         id: 'mainDay_sect',
         label: '<b>Секция 3 — </b> Повестка социального неравенства в&nbsp;современном мире глазами молодых',
-        type: 'radio',
+        type: 'checkbox',
         isChecked: false,
-        name: 'sections-mainDay',
+        name: 'sections-mainDay_day',
         value: 'Секция 3 — Повестка социального неравенства в&nbsp;современном мире глазами молодых',
-        extra: 'custom-toggle--radio'
+        extra: 'custom-toggle--checkbox custom-toggle--single'
       },
       {
         id: 'mainDay_sect',
         label: '<b>Секция 4 — </b> Молодая Арктика',
-        type: 'radio',
+        type: 'checkbox',
         isChecked: false,
-        name: 'sections-mainDay',
+        name: 'sections-mainDay_day',
         value: 'Секция 4 — Молодая Арктика',
-        extra: 'custom-toggle--radio'
+        extra: 'custom-toggle--checkbox custom-toggle--single'
       },
       {
         id: 'mainDay_sect',
         label: '<b>Секция 5 — </b> Развитие социальной сферы, &laquo;Главное-человек&raquo;',
-        type: 'radio',
+        type: 'checkbox',
         isChecked: false,
-        name: 'sections-mainDay',
+        name: 'sections-mainDay_evening',
         value: 'Секция 5 — Развитие социальной сферы, &laquo;Главное-человек&raquo;',
-        extra: 'custom-toggle--radio'
+        extra: 'custom-toggle--checkbox custom-toggle--single'
       },
       {
         id: 'mainDay_sect',
         label: '<b>Секция 6 — </b> Бизнес-секция: научные и&nbsp;индустриальные партнеры',
-        type: 'radio',
+        type: 'checkbox',
         isChecked: false,
-        name: 'sections-mainDay',
+        name: 'sections-mainDay_evening',
         value: 'Секция 6 — Бизнес-секция: научные и&nbsp;индустриальные партнеры',
-        extra: 'custom-toggle--radio'
+        extra: 'custom-toggle--checkbox custom-toggle--single'
       },
       {
         id: 'mainDay_sect',
         label: '<b>Секция 7 — </b> Эффективное управление мегаполисом для снижения негативного воздействия на&nbsp;окружающую среду и&nbsp;здоровье человека',
-        type: 'radio',
+        type: 'checkbox',
         isChecked: false,
-        name: 'sections-mainDay',
+        name: 'sections-mainDay_evening',
         value: 'Секция 7 — Эффективное управление мегаполисом для снижения негативного воздействия на&nbsp;окружающую среду и&nbsp;здоровье человека',
-        extra: 'custom-toggle--radio'
+        extra: 'custom-toggle--checkbox custom-toggle--single'
       },
       {
         id: 'mainDay_sect',
         label: '<b>Секция 8 — </b> Университетский менеджмент в&nbsp;России: вызовы и&nbsp;пути решения',
-        type: 'radio',
+        type: 'checkbox',
         isChecked: false,
-        name: 'sections-mainDay',
+        name: 'sections-mainDay_evening',
         value: 'Секция 8 — Университетский менеджмент в&nbsp;России: вызовы и&nbsp;пути решения',
-        extra: 'custom-toggle--radio'
+        extra: 'custom-toggle--checkbox custom-toggle--single'
       },
     ]
 
   .register(data-form-validate, phoneLength)
     .container
       h1.register__headine Регистрация на&nbsp;VII Международный Невский&nbsp;Форум
-      form.register__form
+      form.register__form(method="POST")
         fieldset.register__fieldset
           legend.register__title.register__title--hidden Данные для регистрации
 
@@ -244,269 +244,270 @@ mixin register()
             data-required
           )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Имя',
-        //-     inputId: 'name',
-        //-     inputName: 'name',
-        //-     isRequired: true
-        //-   })(class="register__input register__input--uppercase",
-        //-     data-validate-type="text",
-        //-     data-required
-        //-   )
+          +custom-input({
+            inputLabel: 'Имя',
+            inputId: 'name',
+            inputName: 'name',
+            isRequired: true
+          })(class="register__input register__input--uppercase",
+            data-validate-type="text",
+            data-required
+          )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Отчество',
-        //-     inputId: 'surname',
-        //-     inputName: 'surname',
-        //-     isRequired: true
-        //-   })(class="register__input register__input--uppercase",
-        //-     data-validate-type="text",
-        //-     data-required
-        //-     )
+          +custom-input({
+            inputLabel: 'Отчество',
+            inputId: 'surname',
+            inputName: 'surname',
+            isRequired: true
+          })(class="register__input register__input--uppercase",
+            data-validate-type="text",
+            data-required
+            )
 
-        //-   +custom-select({
-        //-     label: 'Представьтесь',
-        //-     optionsList: representativeList,
-        //-   })(class="custom-select",
-        //-     data-validate-type="select",
-        //-     data-required,
-        //-     data-select='person'
-        //-     )
+          +custom-select({
+            label: 'Представьтесь',
+            optionsList: representativeList,
+          })(class="custom-select",
+            data-validate-type="select",
+            data-required,
+            data-select='person'
+            )
 
-        //-   +custom-input({
-        //-     inputId: 'yourOwnVersion',
-        //-     inputName: 'yourOwnVersion',
-        //-     inputPlaceholder: 'Представьтесь',
-        //-     isRequired: true,
-        //-   })(class="register__input is-hidden",
-        //-     data-validate-type="text",
-        //-     data-required,
-        //-     data-input='person'
-        //-     )
+          +custom-input({
+            inputId: 'yourOwnVersion',
+            inputName: 'yourOwnVersion',
+            inputPlaceholder: 'Представьтесь',
+            isRequired: true,
+          })(class="register__input is-hidden",
+            data-validate-type="text",
+            data-required,
+            data-input='person'
+            )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Место работы/учебы',
-        //-     inputId: 'workplace',
-        //-     inputName: 'workplace',
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-validate-type="text",
-        //-     data-required
-        //-     )
+          +custom-input({
+            inputLabel: 'Место работы/учебы',
+            inputId: 'workplace',
+            inputName: 'workplace',
+            isRequired: true
+          })(class="register__input",
+            data-validate-type="text",
+            data-required
+            )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Должность',
-        //-     inputId: 'jobTitle',
-        //-     inputName: 'jobTitle',
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-validate-type="text",
-        //-     data-required
-        //-     )
+          +custom-input({
+            inputLabel: 'Должность',
+            inputId: 'jobTitle',
+            inputName: 'jobTitle',
+            isRequired: true
+          })(class="register__input",
+            data-validate-type="text",
+            data-required
+            )
 
-        //-   +custom-select({
-        //-     label: 'Регион',
-        //-     optionsList: regions,
-        //-   })(class="custom-select",
-        //-     data-validate-type="select",
-        //-     data-required,
-        //-     data-select=''
-        //-     )
+          +custom-select({
+            label: 'Регион',
+            optionsList: regions,
+          })(class="custom-select",
+            data-validate-type="select",
+            data-required,
+            data-select=''
+            )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Ваш e-mail',
-        //-     inputId: 'email',
-        //-     inputName: 'email',
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-validate-type="email",
-        //-     data-required
-        //-     )
+          +custom-input({
+            inputLabel: 'Ваш e-mail',
+            inputId: 'email',
+            inputName: 'email',
+            isRequired: true
+          })(class="register__input",
+            data-validate-type="email",
+            data-required
+            )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Контактный телефон',
-        //-     inputId: 'phone',
-        //-     inputName: 'phone',
-        //-     inputPlaceholder: '+7 (111) 111 11 11',
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-validate-type="phone",
-        //-     data-required
-        //-     )
+          +custom-input({
+            inputLabel: 'Контактный телефон',
+            inputId: 'phone',
+            inputName: 'phone',
+            inputPlaceholder: '+7 (111) 111 11 11',
+            isRequired: true
+          })(class="register__input",
+            data-validate-type="phone",
+            data-required
+            )
 
-        //- fieldset.register__fieldset(data-validate-type="toggle-group", data-tabs="sections-tabs")
-        //-   legend.register__title Выберите дату участия
-        //-   p.register__error-title-wrap
-        //-     span.register__error-text
+        fieldset.register__fieldset(data-validate-type="toggle-group", data-tabs="sections-tabs")
+          legend.register__title Выберите дату участия
+          p.register__error-title-wrap
+            span.register__error-text
 
-        //-   +custom-toggle({
-        //-     inputId: 'internationalConference',
-        //-     inputLabel: '21 июня (Международная конференция)',
-        //-     inputType: 'checkbox',
-        //-     inputChecked: true,
-        //-     inputName: 'dateParticipation',
-        //-     inputValue: '21 июня (Международная конференция)'
-        //-   })(class="custom-toggle--checkbox", data-required)
+          +custom-toggle({
+            inputId: 'internationalConference',
+            inputLabel: '21 июня (Международная конференция)',
+            inputType: 'checkbox',
+            inputChecked: true,
+            inputName: 'dateParticipation',
+            inputValue: '21 июня (Международная конференция)'
+          })(class="custom-toggle--checkbox", data-required)
 
-        //-   +custom-toggle({
-        //-     inputId: 'ranepaFaculties',
-        //-     inputLabel: '22 июня (Секции факультетов РАНХиГС)',
-        //-     inputType: 'checkbox',
-        //-     inputChecked: false,
-        //-     inputName: 'dateParticipation',
-        //-     inputValue: '22 июня (Секции факультетов РАНХиГС)'
-        //-   })(class="custom-toggle--checkbox", data-required)
+          +custom-toggle({
+            inputId: 'ranepaFaculties',
+            inputLabel: '22 июня (Секции факультетов РАНХиГС)',
+            inputType: 'checkbox',
+            inputChecked: false,
+            inputName: 'dateParticipation',
+            inputValue: '22 июня (Секции факультетов РАНХиГС)'
+          })(class="custom-toggle--checkbox", data-required)
 
-        //-   +custom-toggle({
-        //-     inputId: 'mainDay',
-        //-     inputLabel: '23 июня (Основной день Форума)',
-        //-     inputType: 'checkbox',
-        //-     inputChecked: false,
-        //-     inputName: 'dateParticipation',
-        //-     inputValue: '23 июня (Основной день Форума)'
-        //-   })(class="custom-toggle--checkbox", data-required)
+          +custom-toggle({
+            inputId: 'mainDay',
+            inputLabel: '23 июня (Основной день Форума)',
+            inputType: 'checkbox',
+            inputChecked: false,
+            inputName: 'dateParticipation',
+            inputValue: '23 июня (Основной день Форума)'
+          })(class="custom-toggle--checkbox", data-required)
 
-        //- fieldset.register__fieldset(data-sections="panel")
-        //-   legend.register__title Укажите мероприятия, в&nbsp;которых&nbsp;Вы будете участвовать
+        fieldset.register__fieldset(data-sections="panel")
+          legend.register__title Укажите мероприятия, в&nbsp;которых&nbsp;Вы будете участвовать
 
-        //-   .register__sections-wrapper(data-validate-type="toggle-group", data-sections-tab="internationalConference")
-        //-     .register__sections
-        //-       h2.register__sections-title 21 июня:
-        //-       p.register__error-title-wrap
-        //-         span.register__error-text
-        //-       +custom-toggle({
-        //-         inputId: 'internationalConference_sect-1',
-        //-         inputLabel: '<b>Секция 1 — </b> Международная конференция, посвященная вопросам интернационализации вузов',
-        //-         inputType: 'checkbox',
-        //-         inputChecked: false,
-        //-         inputName: 'sections',
-        //-         inputValue: 'Международная конференция, посвященная вопросам интернационализации вузов'
-        //-     })(class="custom-toggle--checkbox", data-required)
+          .register__sections-wrapper(data-validate-type="toggle-group", data-sections-tab="internationalConference")
+            .register__sections
+              h2.register__sections-title 21 июня:
+              p.register__error-title-wrap
+                span.register__error-text
+              +custom-toggle({
+                inputId: 'internationalConference_sect-1',
+                inputLabel: '<b>Секция 1 — </b> Международная конференция, посвященная вопросам интернационализации вузов',
+                inputType: 'checkbox',
+                inputChecked: false,
+                inputName: 'sections',
+                inputValue: 'Международная конференция, посвященная вопросам интернационализации вузов'
+            })(class="custom-toggle--checkbox", data-required)
 
-        //-   .register__sections-wrapper.is-hidden(data-validate-type="toggle-group", data-sections-tab="ranepaFaculties")
-        //-     .register__sections
-        //-       h2.register__sections-title 22 июня:
-        //-       p.register__error-title-wrap
-        //-         span.register__error-text
+          .register__sections-wrapper.is-hidden(data-validate-type="toggle-group", data-sections-tab="ranepaFaculties")
+            .register__sections
+              h2.register__sections-title 22 июня:
+              p.register__error-title-wrap
+                span.register__error-text
 
-        //-       each item, index in ranepaFaculties
-        //-         +custom-toggle({
-        //-           inputId: item.id + '-' + (index + 1),
-        //-           inputLabel: item.label,
-        //-           inputType: item.type,
-        //-           inputChecked: item.isChecked,
-        //-           inputName: item.name,
-        //-           inputValue: item.value
-        //-         })(class="custom-toggle--checkbox", data-required)
+              each item, index in ranepaFaculties
+                +custom-toggle({
+                  inputId: item.id + '-' + (index + 1),
+                  inputLabel: item.label,
+                  inputType: item.type,
+                  inputChecked: item.isChecked,
+                  inputName: item.name,
+                  inputValue: item.value
+                })(class="custom-toggle--checkbox", data-required)
 
-        //-   .register__sections-wrapper.is-hidden(data-sections-tab="mainDay")
-        //-     .register__section
-        //-       h2.register__sections-title 23 июня:
-        //-       .register__section
-        //-         h3.register__sections-subtitle Дневная сессия
-        //-         each item, index in mainDay
-        //-           if index < 4
-        //-             +custom-toggle({
-        //-               inputId: item.id + '-' + (index + 1),
-        //-               inputLabel: item.label,
-        //-               inputType: item.type,
-        //-               inputChecked: item.isChecked,
-        //-               inputName: item.name,
-        //-               inputValue: item.value
-        //-             })(class= item.extra)
-        //-       .register__section
-        //-         h3.register__sections-subtitle Вечерняя сессия
-        //-         each item, index in mainDay
-        //-           if index >= 4
-        //-             +custom-toggle({
-        //-               inputId: item.id + '-' + (index + 1),
-        //-               inputLabel: item.label,
-        //-               inputType: item.type,
-        //-               inputChecked: item.isChecked,
-        //-               inputName: item.name,
-        //-               inputValue: item.value
-        //-             })(class= item.extra)
-        //- fieldset.register__fieldset.is-hidden(data-sections-tab="mainDay")
-        //-   legend.register__title Паспортные данные
-        //-   p.register__text-alert Пропускной режим в&nbsp;Президентскую библиотеку требует предъявления оригинала документа, удостоверяющего личность (паспорт гражданина&nbsp;РФ или гражданина иностранного государства). Просим заполнить следующую информацию
+          .register__sections-wrapper.is-hidden(data-sections-tab="mainDay")
+            .register__section
+              h2.register__sections-title 23 июня:
+              .register__section
+                h3.register__sections-subtitle Дневная сессия
+                each item, index in mainDay
+                  if index < 4
+                    +custom-toggle({
+                      inputId: item.id + '-' + (index + 1),
+                      inputLabel: item.label,
+                      inputType: item.type,
+                      inputChecked: item.isChecked,
+                      inputName: item.name,
+                      inputValue: item.value
+                    })(class= item.extra)
+              .register__section
+                h3.register__sections-subtitle Вечерняя сессия
+                each item, index in mainDay
+                  if index >= 4
+                    +custom-toggle({
+                      inputId: item.id + '-' + (index + 1),
+                      inputLabel: item.label,
+                      inputType: item.type,
+                      inputChecked: item.isChecked,
+                      inputName: item.name,
+                      inputValue: item.value
+                    })(class= item.extra)
 
-        //-   +custom-input({
-        //-     inputLabel: 'Серия паспорта',
-        //-     inputId: 'passportSeries',
-        //-     inputType: 'number',
-        //-     inputName: 'passportSeries',
-        //-     inputMaxLength: 4,
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="number",
-        //-   )
+        fieldset.register__fieldset.is-hidden(data-sections-tab="mainDay")
+          legend.register__title Паспортные данные
+          p.register__text-alert Пропускной режим в&nbsp;Президентскую библиотеку требует предъявления оригинала документа, удостоверяющего личность (паспорт гражданина&nbsp;РФ или гражданина иностранного государства). Просим заполнить следующую информацию
 
-        //-   +custom-input({
-        //-     inputLabel: 'Номер паспорта',
-        //-     inputId: 'passportID',
-        //-     inputName: 'passportID',
-        //-     inputType: 'number',
-        //-     inputMaxLength: 6,
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="number",
-        //-   )
+          +custom-input({
+            inputLabel: 'Серия паспорта',
+            inputId: 'passportSeries',
+            inputType: 'number',
+            inputName: 'passportSeries',
+            inputMaxLength: 4,
+            isRequired: true
+          })(class="register__input",
+            data-required,
+            data-validate-type="number",
+          )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Дата рождения',
-        //-     inputId: 'birthday',
-        //-     inputName: 'birthday',
-        //-     isRequired: true,
-        //-     inputDataDate: 'date',
-        //-     inputMinLength: 10,
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="text"
-        //-     )
+          +custom-input({
+            inputLabel: 'Номер паспорта',
+            inputId: 'passportID',
+            inputName: 'passportID',
+            inputType: 'number',
+            inputMaxLength: 6,
+            isRequired: true
+          })(class="register__input",
+            data-required,
+            data-validate-type="number",
+          )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Место рождения (как указано в паспорте)',
-        //-     inputId: 'placeOfBirth',
-        //-     inputName: 'placeOfBirth',
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="text"
-        //-     )
+          +custom-input({
+            inputLabel: 'Дата рождения',
+            inputId: 'birthday',
+            inputName: 'birthday',
+            isRequired: true,
+            inputDataDate: 'date',
+            inputMinLength: 10,
+          })(class="register__input",
+            data-required,
+            data-validate-type="text"
+            )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Страна проживания',
-        //-     inputId: 'countryResidence',
-        //-     inputName: 'countryResidence',
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="text"
-        //-     )
+          +custom-input({
+            inputLabel: 'Место рождения (как указано в паспорте)',
+            inputId: 'placeOfBirth',
+            inputName: 'placeOfBirth',
+            isRequired: true
+          })(class="register__input",
+            data-required,
+            data-validate-type="text"
+            )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Адрес регистрации',
-        //-     inputId: 'registrationAddress',
-        //-     inputName: 'countryResidence',
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="text"
-        //-     )
+          +custom-input({
+            inputLabel: 'Страна проживания',
+            inputId: 'countryResidence',
+            inputName: 'countryResidence',
+            isRequired: true
+          })(class="register__input",
+            data-required,
+            data-validate-type="text"
+            )
 
-        //-   +custom-toggle({
-        //-     inputId: 'consentPersonalData',
-        //-     inputLabel: '<a href="#" target="_blank" rel="nofollow noopener noreferrer">Я подтверждаю свое согласие&nbsp; </a>на обработку моих указанных в анкете персональных данных в соответствии со ст. 9 Федерального закона «О персональных данных» от 27.07.2006 г. №152-ФЗ',
-        //-     inputType: 'checkbox',
-        //-     inputChecked: false,
-        //-     inputName: 'consentPersonalData',
-        //-     inputValue: '22 июня (Секции факультетов РАНХиГС)'
-        //-   })(class="custom-toggle--checkbox custom-toggle--checkbox-agree"
-        //-     data-required,
-        //-     data-validate-type="checkbox"
-        //-   )
+          +custom-input({
+            inputLabel: 'Адрес регистрации',
+            inputId: 'registrationAddress',
+            inputName: 'countryResidence',
+            isRequired: true
+          })(class="register__input",
+            data-required,
+            data-validate-type="text"
+            )
+
+          +custom-toggle({
+            inputId: 'consentPersonalData',
+            inputLabel: '<a href="#" target="_blank" rel="nofollow noopener noreferrer">Я подтверждаю свое согласие&nbsp; </a>на обработку моих указанных в анкете персональных данных в соответствии со ст. 9 Федерального закона «О персональных данных» от 27.07.2006 г. №152-ФЗ',
+            inputType: 'checkbox',
+            inputChecked: false,
+            inputName: 'consentPersonalData',
+            inputValue: '22 июня (Секции факультетов РАНХиГС)'
+          })(class="custom-toggle--checkbox custom-toggle--checkbox-agree"
+            data-required,
+            data-validate-type="checkbox"
+          )
 
         +btn({
           text: 'Зарегистрироваться',
