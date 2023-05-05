@@ -334,98 +334,94 @@ mixin register()
           //-   data-required
           //-   )
 
-        //- fieldset.register__fieldset(data-validate-type="toggle-group", data-tabs="sections-tabs")
-        //-   legend.register__title Выберите дату участия
-        //-   p.register__error-title-wrap
-        //-     span.register__error-text
+        fieldset.register__fieldset(data-validate-type="toggle-group", data-tabs="sections-tabs")
+          legend.register__title Выберите дату участия
+          p.register__error-title-wrap
+            span.register__error-text
 
-        //-   +custom-toggle({
-        //-     inputId: 'internationalConference',
-        //-     inputLabel: '21 июня (Международная конференция)',
-        //-     inputType: 'checkbox',
-        //-     inputChecked: true,
-        //-     inputName: 'dateParticipation',
-        //-     inputValue: '21 июня (Международная конференция)'
-        //-   })(class="custom-toggle--checkbox", data-required)
+          +custom-toggle({
+            inputId: 'internationalConference',
+            inputLabel: '21 июня (Международная конференция)',
+            inputType: 'checkbox',
+            inputChecked: true,
+            inputName: 'date_21',
+            inputValue: '21 июня (Международная конференция)'
+          })(class="custom-toggle--checkbox", data-required)
 
-        //-   +custom-toggle({
-        //-     inputId: 'ranepaFaculties',
-        //-     inputLabel: '22 июня (Секции факультетов РАНХиГС)',
-        //-     inputType: 'checkbox',
-        //-     inputChecked: false,
-        //-     inputName: 'dateParticipation',
-        //-     inputValue: '22 июня (Секции факультетов РАНХиГС)'
-        //-   })(class="custom-toggle--checkbox", data-required)
+          +custom-toggle({
+            inputId: 'ranepaFaculties',
+            inputLabel: '22 июня (Секции факультетов РАНХиГС)',
+            inputType: 'checkbox',
+            inputChecked: false,
+            inputName: 'date_22',
+            inputValue: '22 июня (Секции факультетов РАНХиГС)'
+          })(class="custom-toggle--checkbox", data-required)
 
-        //-   +custom-toggle({
-        //-     inputId: 'mainDay',
-        //-     inputLabel: '23 июня (Основной день Форума)',
-        //-     inputType: 'checkbox',
-        //-     inputChecked: false,
-        //-     inputName: 'dateParticipation',
-        //-     inputValue: '23 июня (Основной день Форума)'
-        //-   })(class="custom-toggle--checkbox", data-required)
+          +custom-toggle({
+            inputId: 'mainDay',
+            inputLabel: '23 июня (Основной день Форума)',
+            inputType: 'checkbox',
+            inputChecked: false,
+            inputName: 'date_23',
+            inputValue: '23 июня (Основной день Форума)'
+          })(class="custom-toggle--checkbox", data-required)
 
-        //- fieldset.register__fieldset(data-sections="panel")
-        //-   legend.register__title Укажите мероприятия, в&nbsp;которых&nbsp;Вы будете участвовать
+        fieldset.register__fieldset(data-sections="panel")
+          legend.register__title Укажите мероприятия, в&nbsp;которых&nbsp;Вы будете участвовать
 
-        //-   .register__sections-wrapper(data-validate-type="toggle-group", data-sections-tab="internationalConference")
-        //-     .register__sections
-        //-       h2.register__sections-title 21 июня:
-        //-       p.register__error-title-wrap
-        //-         span.register__error-text
-        //-       +custom-toggle({
-        //-         inputId: 'internationalConference_sect-1',
-        //-         inputLabel: '<b>Секция 1 — </b> Международная конференция, посвященная вопросам интернационализации вузов',
-        //-         inputType: 'checkbox',
-        //-         inputChecked: false,
-        //-         inputName: 'sections',
-        //-         inputValue: 'Международная конференция, посвященная вопросам интернационализации вузов'
-        //-     })(class="custom-toggle--checkbox", data-required)
+          .register__sections-wrapper(data-validate-type="toggle-group", data-sections-tab="internationalConference")
+            .register__sections
+              h2.register__sections-title 21 июня:
+              p.register__error-title-wrap
+                span.register__error-text
+              +custom-toggle({
+                inputId: 'internationalConference_sect-1',
+                inputLabel: '<b>Секция 1 — </b> Международная конференция, посвященная вопросам интернационализации вузов',
+                inputType: 'checkbox',
+                inputChecked: false,
+                inputName: 'date_21_s_1',
+            })(class="custom-toggle--checkbox", data-required)
 
-        //-   .register__sections-wrapper.is-hidden(data-validate-type="toggle-group", data-sections-tab="ranepaFaculties")
-        //-     .register__sections
-        //-       h2.register__sections-title 22 июня:
-        //-       p.register__error-title-wrap
-        //-         span.register__error-text
+          .register__sections-wrapper.is-hidden(data-validate-type="toggle-group", data-sections-tab="ranepaFaculties")
+            .register__sections
+              h2.register__sections-title 22 июня:
+              p.register__error-title-wrap
+                span.register__error-text
 
-        //-       each item, index in ranepaFaculties
-        //-         +custom-toggle({
-        //-           inputId: item.id + '-' + (index + 1),
-        //-           inputLabel: item.label,
-        //-           inputType: item.type,
-        //-           inputChecked: item.isChecked,
-        //-           inputName: item.name,
-        //-           inputValue: item.value
-        //-         })(class="custom-toggle--checkbox", data-required)
+              each item, index in ranepaFaculties
+                +custom-toggle({
+                  inputId: item.id + '-' + (index + 1),
+                  inputLabel: item.label,
+                  inputType: item.type,
+                  inputChecked: item.isChecked,
+                  inputName: 'date_22_s_' + (index + 1),
+                })(class="custom-toggle--checkbox", data-required)
 
-        //-   .register__sections-wrapper.is-hidden(data-sections-tab="mainDay")
-        //-     .register__section
-        //-       h2.register__sections-title 23 июня:
-        //-       .register__section
-        //-         h3.register__sections-subtitle Дневная сессия
-        //-         each item, index in mainDay
-        //-           if index < 4
-        //-             +custom-toggle({
-        //-               inputId: item.id + '-' + (index + 1),
-        //-               inputLabel: item.label,
-        //-               inputType: item.type,
-        //-               inputChecked: item.isChecked,
-        //-               inputName: item.name,
-        //-               inputValue: item.value
-        //-             })(class= item.extra)
-        //-       .register__section
-        //-         h3.register__sections-subtitle Вечерняя сессия
-        //-         each item, index in mainDay
-        //-           if index >= 4
-        //-             +custom-toggle({
-        //-               inputId: item.id + '-' + (index + 1),
-        //-               inputLabel: item.label,
-        //-               inputType: item.type,
-        //-               inputChecked: item.isChecked,
-        //-               inputName: item.name,
-        //-               inputValue: item.value
-        //-             })(class= item.extra)
+          .register__sections-wrapper.is-hidden(data-sections-tab="mainDay")
+            .register__section
+              h2.register__sections-title 23 июня:
+              .register__section
+                h3.register__sections-subtitle Дневная сессия
+                each item, index in mainDay
+                  if index < 4
+                    +custom-toggle({
+                      inputId: item.id + '-' + (index + 1),
+                      inputLabel: item.label,
+                      inputType: item.type,
+                      inputChecked: item.isChecked,
+                      inputName: 'date_23_s_' + (index + 1),
+                    })(class= item.extra)
+              .register__section
+                h3.register__sections-subtitle Вечерняя сессия
+                each item, index in mainDay
+                  if index >= 4
+                    +custom-toggle({
+                      inputId: item.id + '-' + (index + 1),
+                      inputLabel: item.label,
+                      inputType: item.type,
+                      inputChecked: item.isChecked,
+                      inputName: 'date_23_s_' + (index + 1),
+                    })(class= item.extra)
 
         //- fieldset.register__fieldset.is-hidden(data-sections-tab="mainDay")
         //-   legend.register__title Паспортные данные
