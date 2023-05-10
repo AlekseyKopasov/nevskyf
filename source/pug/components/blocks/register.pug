@@ -254,85 +254,87 @@ mixin register()
             data-required
           )
 
-          //- +custom-input({
-          //-   inputLabel: 'Отчество',
-          //-   inputId: 'surname',
-          //-   inputName: 'surname',
-          //-   isRequired: true
-          //- })(class="register__input register__input--uppercase",
-          //-   data-validate-type="text",
-          //-   data-required
-          //-   )
+          +custom-input({
+            inputLabel: 'Отчество',
+            inputId: 'surname',
+            inputName: 'surname',
+            isRequired: true
+          })(class="register__input register__input--uppercase",
+            data-validate-type="text",
+            data-required
+            )
 
-          //- +custom-select({
-          //-   label: 'Представьтесь',
-          //-   optionsList: representativeList,
-          //- })(class="custom-select",
-          //-   data-validate-type="select",
-          //-   data-required,
-          //-   data-select='person'
-          //-   )
+          +custom-select({
+            label: 'Представьтесь',
+            optionsList: representativeList,
+          })(class="custom-select",
+            data-validate-type="select",
+            data-required,
+            data-select='person',
+            data-name='role'
+            )
 
-          //- +custom-input({
-          //-   inputId: 'yourOwnVersion',
-          //-   inputName: 'yourOwnVersion',
-          //-   inputPlaceholder: 'Представьтесь',
-          //-   isRequired: true,
-          //- })(class="register__input is-hidden",
-          //-   data-validate-type="text",
-          //-   data-required,
-          //-   data-input='person'
-          //-   )
+          +custom-input({
+            inputId: 'yourOwnVersion',
+            inputName: 'role',
+            inputPlaceholder: 'Представьтесь',
+            isRequired: true,
+          })(class="register__input is-hidden",
+            data-validate-type="text",
+            data-required,
+            data-input='person'
+            )
 
-          //- +custom-input({
-          //-   inputLabel: 'Место работы/учебы',
-          //-   inputId: 'workplace',
-          //-   inputName: 'workplace',
-          //-   isRequired: true
-          //- })(class="register__input",
-          //-   data-validate-type="text",
-          //-   data-required
-          //-   )
+          +custom-input({
+            inputLabel: 'Место работы/учебы',
+            inputId: 'workplace',
+            inputName: 'workplace',
+            isRequired: true
+          })(class="register__input",
+            data-validate-type="text",
+            data-required
+            )
 
-          //- +custom-input({
-          //-   inputLabel: 'Должность',
-          //-   inputId: 'jobTitle',
-          //-   inputName: 'jobTitle',
-          //-   isRequired: true
-          //- })(class="register__input",
-          //-   data-validate-type="text",
-          //-   data-required
-          //-   )
+          +custom-input({
+            inputLabel: 'Должность',
+            inputId: 'position',
+            inputName: 'position',
+            isRequired: true
+          })(class="register__input",
+            data-validate-type="text",
+            data-required
+            )
 
-          //- +custom-select({
-          //-   label: 'Регион',
-          //-   optionsList: regions,
-          //- })(class="custom-select",
-          //-   data-validate-type="select",
-          //-   data-required,
-          //-   data-select=''
-          //-   )
+          +custom-select({
+            label: 'Регион',
+            optionsList: regions,
+          })(class="custom-select",
+            data-validate-type="select",
+            data-required,
+            data-select='',
+            data-name="region"
+            )
 
-          //- +custom-input({
-          //-   inputLabel: 'Ваш e-mail',
-          //-   inputId: 'email',
-          //-   inputName: 'email',
-          //-   isRequired: true
-          //- })(class="register__input",
-          //-   data-validate-type="email",
-          //-   data-required
-          //-   )
+          +custom-input({
+            inputLabel: 'Ваш e-mail',
+            inputId: 'email',
+            inputName: 'email',
+            isRequired: true
+          })(class="register__input",
+            data-validate-type="email",
+            data-required
+            )
 
-          //- +custom-input({
-          //-   inputLabel: 'Контактный телефон',
-          //-   inputId: 'phone',
-          //-   inputName: 'phone',
-          //-   inputPlaceholder: '+7 (111) 111 11 11',
-          //-   isRequired: true
-          //- })(class="register__input",
-          //-   data-validate-type="phone",
-          //-   data-required
-          //-   )
+          +custom-input({
+            inputLabel: 'Контактный телефон',
+            inputId: 'phone',
+            inputName: 'phone',
+            inputPlaceholder: '+7 (111) 111 11 11',
+            isRequired: true
+          })(class="register__input",
+            data-validate-type="phone",
+            data-required
+            )
 
         fieldset.register__fieldset(data-validate-type="toggle-group", data-tabs="sections-tabs")
           legend.register__title Выберите дату участия
@@ -423,87 +425,87 @@ mixin register()
                       inputName: 'date_23_s_' + (index + 1),
                     })(class= item.extra)
 
-        //- fieldset.register__fieldset.is-hidden(data-sections-tab="mainDay")
-        //-   legend.register__title Паспортные данные
-        //-   p.register__text-alert Пропускной режим в&nbsp;Президентскую библиотеку требует предъявления оригинала документа, удостоверяющего личность (паспорт гражданина&nbsp;РФ или гражданина иностранного государства). Просим заполнить следующую информацию
+        fieldset.register__fieldset.is-hidden(data-sections-tab="mainDay")
+          legend.register__title Паспортные данные
+          p.register__text-alert Пропускной режим в&nbsp;Президентскую библиотеку требует предъявления оригинала документа, удостоверяющего личность (паспорт гражданина&nbsp;РФ или гражданина иностранного государства). Просим заполнить следующую информацию
 
-        //-   +custom-input({
-        //-     inputLabel: 'Серия паспорта',
-        //-     inputId: 'passportSeries',
-        //-     inputType: 'number',
-        //-     inputName: 'passportSeries',
-        //-     inputMaxLength: 4,
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="number",
-        //-   )
+          +custom-input({
+            inputLabel: 'Серия паспорта',
+            inputId: 'passportSeries',
+            inputType: 'number',
+            inputName: 'passportSeries',
+            inputMaxLength: 4,
+            isRequired: true
+          })(class="register__input",
+            data-required,
+            data-validate-type="number",
+          )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Номер паспорта',
-        //-     inputId: 'passportID',
-        //-     inputName: 'passportID',
-        //-     inputType: 'number',
-        //-     inputMaxLength: 6,
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="number",
-        //-   )
+          +custom-input({
+            inputLabel: 'Номер паспорта',
+            inputId: 'passportID',
+            inputName: 'passportID',
+            inputType: 'number',
+            inputMaxLength: 6,
+            isRequired: true
+          })(class="register__input",
+            data-required,
+            data-validate-type="number",
+          )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Дата рождения',
-        //-     inputId: 'birthday',
-        //-     inputName: 'birthday',
-        //-     isRequired: true,
-        //-     inputDataDate: 'date',
-        //-     inputMinLength: 10,
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="text"
-        //-     )
+          +custom-input({
+            inputLabel: 'Дата рождения',
+            inputId: 'birthday',
+            inputName: 'birthday',
+            isRequired: true,
+            inputDataDate: 'date',
+            inputMinLength: 10,
+          })(class="register__input",
+            data-required,
+            data-validate-type="text"
+            )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Место рождения (как указано в паспорте)',
-        //-     inputId: 'placeOfBirth',
-        //-     inputName: 'placeOfBirth',
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="text"
-        //-     )
+          +custom-input({
+            inputLabel: 'Место рождения (как указано в паспорте)',
+            inputId: 'placeOfBirth',
+            inputName: 'placeOfBirth',
+            isRequired: true
+          })(class="register__input",
+            data-required,
+            data-validate-type="text"
+            )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Страна проживания',
-        //-     inputId: 'countryResidence',
-        //-     inputName: 'countryResidence',
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="text"
-        //-     )
+          +custom-input({
+            inputLabel: 'Страна проживания',
+            inputId: 'countryResidence',
+            inputName: 'countryResidence',
+            isRequired: true
+          })(class="register__input",
+            data-required,
+            data-validate-type="text"
+            )
 
-        //-   +custom-input({
-        //-     inputLabel: 'Адрес регистрации',
-        //-     inputId: 'registrationAddress',
-        //-     inputName: 'countryResidence',
-        //-     isRequired: true
-        //-   })(class="register__input",
-        //-     data-required,
-        //-     data-validate-type="text"
-        //-     )
+          +custom-input({
+            inputLabel: 'Адрес регистрации',
+            inputId: 'registrationAddress',
+            inputName: 'countryResidence',
+            isRequired: true
+          })(class="register__input",
+            data-required,
+            data-validate-type="text"
+            )
 
-        //-   +custom-toggle({
-        //-     inputId: 'consentPersonalData',
-        //-     inputLabel: '<a href="#" target="_blank" rel="nofollow noopener noreferrer">Я подтверждаю свое согласие&nbsp; </a>на обработку моих указанных в анкете персональных данных в соответствии со ст. 9 Федерального закона «О персональных данных» от 27.07.2006 г. №152-ФЗ',
-        //-     inputType: 'checkbox',
-        //-     inputChecked: false,
-        //-     inputName: 'consentPersonalData',
-        //-     inputValue: '22 июня (Секции факультетов РАНХиГС)'
-        //-   })(class="custom-toggle--checkbox custom-toggle--checkbox-agree"
-        //-     data-required,
-        //-     data-validate-type="checkbox"
-        //-   )
+          +custom-toggle({
+            inputId: 'consentPersonalData',
+            inputLabel: '<a href="#" target="_blank" rel="nofollow noopener noreferrer">Я подтверждаю свое согласие&nbsp; </a>на обработку моих указанных в анкете персональных данных в соответствии со ст. 9 Федерального закона «О персональных данных» от 27.07.2006 г. №152-ФЗ',
+            inputType: 'checkbox',
+            inputChecked: false,
+            inputName: 'consentPersonalData',
+            inputValue: '22 июня (Секции факультетов РАНХиГС)'
+          })(class="custom-toggle--checkbox custom-toggle--checkbox-agree"
+            data-required,
+            data-validate-type="checkbox"
+          )
 
         +btn({
           text: 'Зарегистрироваться',
