@@ -146,6 +146,8 @@ export class CustomSelect {
         parent.classList.add('not-empty');
         parent.classList.add('is-valid');
         options[index + 1].selected = true;
+        options[index].removeAttribute('selected');
+        options[index + 1].setAttribute('selected', true);
         this._closeSelect();
       }
     }

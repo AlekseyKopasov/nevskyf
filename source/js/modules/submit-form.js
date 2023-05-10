@@ -57,33 +57,22 @@ const submitForm = () => {
       .then(response => response.text())
       .then((text) => {
         if (text == responseCodes.success) {
-          console.log('Показывать модальное окно');
           showSuccesModal();
-          console.log('Очищать форму');
           evt.target.reset();
-          console.log('Редирект обратно на форум');
-          console.log('Код ответа ---- ', text)
           // к редиректу добавить таймаут
           // window.location.href = NEVSKY_FORUM_PAGE;
         }
 
         if (text == responseCodes.exist) {
-          console.log('Такой пользователь уже зарегистрировался');
-          console.log('Код ответа ---- ', text)
           showErrorModal(errorsMsgSet.exists);
         }
 
         if (text == responseCodes.unknown) {
-          console.log('Необработанная ошибка');
-          console.log('Код ответа ---- ', text)
           showErrorModal(errorsMsgSet.default);
-          console.log('Очищать форму');
           evt.target.reset();
         }
       })
           .catch((text) => {
-            console.log('Необработанная ошибка');
-            console.log('Код ответа ---- ', text)
             showErrorModal(errorsMsgSet.default);
           });
     };
@@ -91,21 +80,29 @@ const submitForm = () => {
     setTimeout(() => {
       if (window.form._validState) {
         const inputs = form.querySelectorAll('input');
+        const selects = form.querySelectorAll('.custom-select__list');
 
         const formData = new FormData();
 
         inputs.forEach((input) => {
           let name = input.getAttribute('name');
           let checkbox = input.getAttribute('type') === 'checkbox';
+          let isHiddenCheckboxParent = input.parentElement.parentElement.parentElement.parentElement.classList.contains('is-hidden');
           let value = input.value;
           let isChecked = input.checked;
 
           if (value.length && !checkbox) {
             formData.append(name, value);
           }
-          if (checkbox && isChecked) {
+          if (checkbox && isChecked && !isHiddenCheckboxParent) {
             formData.append(name, value);
           }
+        });
+
+        selects.forEach((select) => {
+          let item = select.querySelector('.custom-select__item[aria-selected="true"]');
+          let name = select.parentElement.querySelector('select').getAttribute('name');
+          formData.append(name, item.textContent);
         });
         fetchData(formData);
       }

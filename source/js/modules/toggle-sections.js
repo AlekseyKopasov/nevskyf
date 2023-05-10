@@ -18,10 +18,15 @@ const toggleSections = () => {
     }
 
     panels.forEach((panel) => {
+      let inputs = panel.querySelectorAll('input');
+
       if (panel.classList.contains(HIDDEN_CLASS)) {
         panel.classList.remove(HIDDEN_CLASS);
       } else {
         panel.classList.add(HIDDEN_CLASS);
+        inputs.forEach((input) => {
+          input.checked = false;
+        });
       }
     });
   };
