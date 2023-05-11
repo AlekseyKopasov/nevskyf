@@ -170,5 +170,19 @@
     position: absolute;
     top: -15px;
     left: 0;
+
+    &.is-hidden {
+      opacity: 0;
+    }
+  }
+
+  &__error-main-text {
+    margin: 0;
+    margin-bottom: 15px;
+
+    color: $color-tomato;
+    &.is-hidden {
+      opacity: 0;
+    }
   }
 }

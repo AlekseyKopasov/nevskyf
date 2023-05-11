@@ -1,0 +1,17 @@
+extends ../components/base/layout
+
+block data
+
+block variables
+  - const title = "Персональные данные"
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "agree.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    +agree()
+block modals

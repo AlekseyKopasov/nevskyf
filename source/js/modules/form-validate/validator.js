@@ -237,14 +237,14 @@ export class Validator {
     if (this._returnCheckedElements(formElements)) {
       formElements.forEach((input) => {
         this._setItemInvalidState(input.parentElement.parentElement, input);
-        title.textContent = 'Выберите дату';
+        title.classList.remove('is-hidden');
         this._removeGroupAria(formElements);
         flag = false;
       });
     } else {
       formElements.forEach((input) => {
         this._setItemValidState(input.parentElement.parentElement, input);
-        title.textContent = '';
+        title.classList.add('is-hidden');
         this._setGroupAria(formElements);
         flag = true;
       });
@@ -332,7 +332,7 @@ export class Validator {
 
     let isValid = true;
     let isHidden = parent.classList.contains('is-hidden')
-      || parent.parentElement.classList.contains('is-hidden')
+      || parent.parentElement.classList.contains('is-hidden');
 
     if (!isHidden) {
       isValid = this._validateInput(parent.dataset.validateType, parent, formElement);
@@ -345,6 +345,7 @@ export class Validator {
 
   _fullValidate(items) {
     let isValid = true;
+
     items.forEach((item) => {
       const formElement = item.querySelector('input') || item.querySelector('select') || item.querySelector('textarea');
       this.validateFormElement(formElement, true);
@@ -353,20 +354,20 @@ export class Validator {
         isValid = false;
       }
     });
+
     return isValid;
   }
 
   validateForm(event) {
     if (event.type === 'submit') {
       this._submitEvent = true;
+      event.submitter.classList.add('is-error');
     }
 
     const validateItems = event.target.querySelectorAll('[data-validate-type]');
     const result = this._fullValidate(validateItems);
     this._createStates(event.target);
 
-    // const formData = new FormData(event.target);
-    // console.log(...formData);
     return result;
   }
 

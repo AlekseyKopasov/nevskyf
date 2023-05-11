@@ -79,6 +79,7 @@ export class Form {
       return;
     }
     if (!this._validState && callback) {
+
       this._callbacks[callback].errorCallback(event);
       return;
     }

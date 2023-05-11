@@ -2,8 +2,14 @@ const submitForm = () => {
   const form = document.querySelector('.register__form');
   const successModal = document.querySelector('.modal.js-success');
   const errorModal = document.querySelector('.modal.js-error-modal');
-  const NEVSKY_FORUM_PAGE = 'https://science.spb.ranepa.ru/nevskyforum';
   const URL = 'form-mailer.php';
+  const ERROR_CLASS = 'is-error';
+  const HIDDEN_CLASS = 'is-hidden';
+  // const NEVSKY_FORUM_PAGE = 'https://nevskyf.ru';
+  // const REDIRECT_TIME = 500;
+  // setTimeout(() => {
+  //   window.location.href = NEVSKY_FORUM_PAGE;
+  // }, REDIRECT_TIME);
 
   const errorsMsgSet = {
     default: 'Произошла ошибка отправки формы. Пожалуйста, попробуйте еще раз.',
@@ -19,6 +25,9 @@ const submitForm = () => {
   if (!form) {
     return;
   }
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const errorText = form.querySelector('.register__error-main-text');
 
   const showSuccesModal = () => {
     if (!successModal) {
@@ -40,6 +49,7 @@ const submitForm = () => {
 
   const submitHandler = (evt) => {
     evt.preventDefault();
+
     const fetchData = async (data) => {
       const formData = {};
 
@@ -59,26 +69,25 @@ const submitForm = () => {
         if (text == responseCodes.success) {
           showSuccesModal();
           evt.target.reset();
-          // к редиректу добавить таймаут
-          // window.location.href = NEVSKY_FORUM_PAGE;
         }
-
         if (text == responseCodes.exist) {
           showErrorModal(errorsMsgSet.exists);
         }
-
         if (text == responseCodes.unknown) {
           showErrorModal(errorsMsgSet.default);
           evt.target.reset();
         }
       })
-          .catch((text) => {
-            showErrorModal(errorsMsgSet.default);
-          });
+        .catch((text) => {
+          showErrorModal(errorsMsgSet.default);
+        });
     };
 
     setTimeout(() => {
       if (window.form._validState) {
+        submitBtn.classList.remove(ERROR_CLASS);
+        errorText.classList.add(HIDDEN_CLASS);
+
         const inputs = form.querySelectorAll('input');
         const selects = form.querySelectorAll('.custom-select__list');
 
@@ -105,6 +114,9 @@ const submitForm = () => {
           formData.append(name, item.textContent);
         });
         fetchData(formData);
+      } else {
+        submitBtn.classList.add(ERROR_CLASS);
+        errorText.classList.remove(HIDDEN_CLASS);
       }
     }, 0);
   };

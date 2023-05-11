@@ -26,6 +26,8 @@ const toggleSections = () => {
         panel.classList.add(HIDDEN_CLASS);
         inputs.forEach((input) => {
           input.checked = false;
+          input.disabled = false;
+          input.parentElement.classList.remove('disabled');
         });
       }
     });

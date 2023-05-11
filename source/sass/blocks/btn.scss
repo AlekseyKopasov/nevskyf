@@ -28,6 +28,11 @@
     pointer-events: none;
   }
 
+  &.is-error {
+    border-color: $color-tomato;
+    color: $color-tomato;
+  }
+
   @include hover-focus {
     background-color: rgba($color-light-sea-green, 0.3);
     color: $color-whisper;

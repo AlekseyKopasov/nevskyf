@@ -103,7 +103,6 @@ export class Modals {
 
   _modalClickHandler(evt) {
     const target = evt.target;
-
     if (!target.closest('[data-close-modal]')) {
       return;
     }
@@ -242,5 +241,11 @@ export class Modals {
 
     this._setSettings('default');
     this._enableScrolling = true;
+
+    if (modal.classList.contains('js-success')) {
+      setTimeout(() => {
+        window.location.href = 'https://nevskyf.ru';
+      }, 500);
+      }
   }
 }

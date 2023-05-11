@@ -1,0 +1,17 @@
+.agree {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 0;
+
+  @media screen and (max-width: 374px) {
+    padding: 40px 0;
+  }
+
+  h1 {
+    margin-bottom: 38px;
+    text-align: center;
+  }
+}

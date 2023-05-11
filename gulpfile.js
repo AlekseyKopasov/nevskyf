@@ -36,6 +36,7 @@ const syncServer = () => {
   gulp.watch('source/video/**', gulp.series(copy, refresh));
   gulp.watch('source/downloads/**', gulp.series(copy, refresh));
   gulp.watch('source/*.php', gulp.series(copy, refresh));
+  gulp.watch('source/php-mailer/*.php', gulp.series(copy, refresh));
 };
 
 const build = gulp.series(clean, copy, sprite, gulp.parallel(compileMinStyles, compileMainMinScripts, compileVendorScripts, pug, optimizePng, optimizeJpg, optimizeSvg));
